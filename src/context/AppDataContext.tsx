@@ -19,6 +19,7 @@ import type {
   TrainingScript,
 } from '@/types'
 import { createServices, getSettings, saveSettings, type TrainingServices } from '@/services'
+import { useAuth } from './AuthContext'
 
 interface AppDataState {
   learners: Learner[]
@@ -57,6 +58,7 @@ const emptyState: AppDataState = {
 const AppDataContext = createContext<AppDataContextValue | null>(null)
 
 export function AppDataProvider({ children }: { children: ReactNode }) {
+  const { status: authStatus } = useAuth()
   const [settings, setSettings] = useState<AppSettings>(() => getSettings())
   const [data, setData] = useState<AppDataState>(emptyState)
   const [loading, setLoading] = useState(true)
@@ -67,6 +69,11 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
 
   const refreshAll = useCallback(
     async (silent = false) => {
+      if (settings.apiMode === 'live' && authStatus !== 'authenticated') {
+        setLoading(authStatus === 'loading')
+        setError(null)
+        return
+      }
       if (!silent) setLoading(true)
       setError(null)
       try {
@@ -89,7 +96,7 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
         setInitialized(true)
       }
     },
-    [services],
+    [services, settings.apiMode, authStatus],
   )
 
   const refreshTasks = useCallback(async () => {
@@ -108,7 +115,7 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     void refreshAll()
-  }, [refreshAll])
+  }, [refreshAll, authStatus])
 
   const hasActiveTasks = data.tasks.some((task) =>
     ['pending', 'queued', 'generating'].includes(task.status),

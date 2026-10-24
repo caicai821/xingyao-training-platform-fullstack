@@ -68,7 +68,9 @@ export default function TaskResultPage() {
   const script = task.scriptId ? scripts.find((item) => item.id === task.scriptId) : undefined
   const asset = task.assetId ? assets.find((item) => item.id === task.assetId) : undefined
 
-  const previewReference = `demo://scene-preview/${task.id}`
+  const isDemoResult = task.result.isDemo || task.isDemo
+  const previewReference =
+    task.result.previewUrl ?? task.result.sceneUrl ?? `demo://scene-preview/${task.id}`
 
   const copyReference = async () => {
     try {
@@ -94,7 +96,7 @@ export default function TaskResultPage() {
           <>
             <TaskStatusBadge status={task.status} />
             <SourceTypeBadge sourceType={task.sourceType} />
-            <DemoBadge label="演示结果" />
+            {isDemoResult && <DemoBadge label="演示结果" />}
           </>
         }
         actions={
@@ -123,15 +125,27 @@ export default function TaskResultPage() {
                 </span>
                 <p className="text-[13px] font-medium text-ink-800">场景结果预览</p>
               </div>
-              <Badge tone="neutral" className="border-dashed">
-                演示数据 · 非真实渲染
-              </Badge>
+              {isDemoResult ? (
+                <Badge tone="neutral" className="border-dashed">
+                  演示数据 · 非真实渲染
+                </Badge>
+              ) : (
+                <Badge tone="success">真实生成结果</Badge>
+              )}
             </div>
-            <ScenePreview
-              seed={task.result.previewSeed}
-              sceneType={task.sceneConfig.sceneType}
-              className="aspect-[16/10] w-full"
-            />
+            {task.result.previewUrl ? (
+              <img
+                src={task.result.previewUrl}
+                alt={task.sceneName}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            ) : (
+              <ScenePreview
+                seed={task.result.previewSeed}
+                sceneType={task.sceneConfig.sceneType}
+                className="aspect-[16/10] w-full"
+              />
+            )}
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-5 py-3.5">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-400">
                 <span>分辨率 {task.result.resolution}</span>
@@ -156,7 +170,9 @@ export default function TaskResultPage() {
               <>
                 {task.result.notes}
                 <br />
-                当前展示为原型演示画面，不代表真实 3D 渲染输出。接入真实场景生成服务后，该区域可承载服务返回的图片、模型文件链接或场景访问地址。
+                {isDemoResult
+                  ? '当前展示为原型演示画面，不代表真实 3D 渲染输出。'
+                  : '结果由外部 3D 场景生成服务返回；可在右侧结果引用中打开场景地址或模型链接。'}
               </>
             }
           />
@@ -276,7 +292,9 @@ export default function TaskResultPage() {
           </SectionCard>
 
           <Card className="p-5">
-            <p className="text-xs font-medium text-ink-700">结果引用（演示）</p>
+            <p className="text-xs font-medium text-ink-700">
+              结果引用{isDemoResult ? '（演示）' : ''}
+            </p>
             <div className="mt-2 space-y-2 rounded-lg bg-ink-950 p-3 font-mono text-[10px] leading-5 text-ink-200">
               <p className="break-all">
                 <span className="text-ink-400">taskId: </span>
@@ -286,17 +304,41 @@ export default function TaskResultPage() {
                 <span className="text-ink-400">preview: </span>
                 {previewReference}
               </p>
-              <p>
+              <p className="break-all">
                 <span className="text-ink-400">modelUrl: </span>
-                null（演示）
+                {task.result.modelUrl ? (
+                  <a
+                    href={task.result.modelUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-brand-300 underline"
+                  >
+                    {task.result.modelUrl}
+                  </a>
+                ) : (
+                  'null'
+                )}
               </p>
-              <p>
+              <p className="break-all">
                 <span className="text-ink-400">sceneUrl: </span>
-                null（演示）
+                {task.result.sceneUrl ? (
+                  <a
+                    href={task.result.sceneUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-brand-300 underline"
+                  >
+                    {task.result.sceneUrl}
+                  </a>
+                ) : (
+                  'null'
+                )}
               </p>
             </div>
             <p className="mt-2 text-[10px] leading-5 text-ink-400">
-              真实服务接入后，此处将展示模型文件链接与场景访问地址。
+              {isDemoResult
+                ? '演示结果不包含真实场景地址。'
+                : '链接由 3D 场景生成服务提供，请确认浏览器可直接访问。'}
             </p>
           </Card>
 

@@ -29,13 +29,15 @@ import { cn } from '@/lib/utils'
 import type { AppSettings } from '@/types'
 
 const modules = [
+  { name: 'authService', label: '身份验证', endpoint: 'POST /auth/login · GET /auth/me' },
   { name: 'learnerService', label: '学员档案', endpoint: 'GET /learners · POST /learners' },
-  { name: 'abilityProfileService', label: '能力画像', endpoint: 'POST /learners/{id}/ability-profile/generate' },
+  { name: 'abilityProfileService', label: '能力画像', endpoint: 'POST /learners/{id}/profiles' },
   { name: 'trainingGoalService', label: '训练目标', endpoint: 'GET /training-goals · POST /training-goals' },
   { name: 'trainingScriptService', label: '训练脚本', endpoint: 'POST /training-scripts/generate' },
   { name: 'sceneGenerationService', label: '场景生成请求', endpoint: 'POST /scene-tasks' },
   { name: 'sceneTaskService', label: '任务状态查询', endpoint: 'GET /scene-tasks/{id}' },
   { name: 'sceneAssetService', label: '场景资产', endpoint: 'GET /scene-assets' },
+  { name: 'uploadService', label: '文件上传', endpoint: 'POST /uploads · GET /uploads/{id}/content' },
 ]
 
 export default function SettingsPage() {
@@ -203,7 +205,7 @@ export default function SettingsPage() {
               <Alert
                 tone="warning"
                 title="切换到真实 API 模式"
-                description="保存后将重新加载工作区数据。若服务不可用，会显示连接错误页，可在其中切换回演示模式。建议先确认接口地址可访问。"
+                description="保存后需要登录后端账号，并重新加载工作区数据。若服务不可用，会显示连接错误页，可在其中切换回演示模式。建议先确认接口地址可访问。"
                 className="mt-4"
               />
             )}
@@ -217,14 +219,14 @@ export default function SettingsPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <Field
                 label="API 基础地址"
-                hint="例如：https://api.example.com/v1"
+                hint="例如：http://localhost:4000/api/v1"
                 error={errors.apiBaseUrl}
                 className="sm:col-span-2"
               >
                 <Input
                   value={form.apiBaseUrl}
                   onChange={(event) => update('apiBaseUrl', event.target.value)}
-                  placeholder="https://api.example.com/v1"
+                  placeholder="http://localhost:4000/api/v1"
                 />
               </Field>
               <Field
@@ -236,7 +238,7 @@ export default function SettingsPage() {
                 <Input
                   value={form.uploadUrl}
                   onChange={(event) => update('uploadUrl', event.target.value)}
-                  placeholder="https://upload.example.com/v1/files"
+                  placeholder="http://localhost:4000/api/v1/uploads"
                 />
               </Field>
               <Field
@@ -307,7 +309,7 @@ export default function SettingsPage() {
 
           <SectionCard
             title="服务模块与预留接口"
-            description="页面通过独立服务层访问数据，未来可替换为真实接口实现。"
+            description="演示模式与真实 API 模式通过同一服务层访问；生成服务模式由后端单独配置。"
             icon={<Database />}
           >
             <div className="overflow-hidden rounded-lg border border-line">
@@ -323,12 +325,13 @@ export default function SettingsPage() {
                   <span className="min-w-0 flex-1 truncate font-mono text-[10px] text-ink-400">
                     {module.endpoint}
                   </span>
-                  <Badge tone="success">已预留</Badge>
+                  <Badge tone="success">已接入</Badge>
                 </div>
               ))}
             </div>
             <p className="mt-3 text-[11px] leading-5 text-ink-400">
-              接口路径为前端预留示例，实际参数与返回结构应以未来外部服务协议为准。
+              接口路径与后端 /api/v1 保持一致。数据模式（演示 / 真实 API）与生成服务模式（mock / real）
+              由前端设置和后端环境变量分别管理，两者互不绑定。
             </p>
           </SectionCard>
         </div>
@@ -342,10 +345,14 @@ export default function SettingsPage() {
               <p className="text-[13px] font-semibold text-ink-900">数据与隐私</p>
             </div>
             <div className="mt-3 space-y-3 text-[11px] leading-5 text-ink-500">
-              <p>· 原型中的姓名、编号、记录与案例均为虚构数据。</p>
+              <p>· 演示模式中的姓名、编号、记录与案例均为虚构数据。</p>
               <p>· 学员档案遵循最小必要原则，仅收集支持训练所需的信息。</p>
               <p>· 上传图片限制为 JPG/PNG/WebP，单张不超过 2 MB。</p>
-              <p>· 当前数据保存在浏览器本地存储中，仅用于演示，不具备生产级安全能力。</p>
+              <p>
+                · {settings.apiMode === 'live'
+                  ? '真实 API 模式下数据保存于后端 PostgreSQL，身份通过 HttpOnly Cookie 会话校验。生产环境必须启用 HTTPS 与 Secure Cookie。'
+                  : '当前数据保存在浏览器本地存储中，仅用于演示。'}
+              </p>
             </div>
           </Card>
 
@@ -373,9 +380,11 @@ export default function SettingsPage() {
             <dl className="mt-3 space-y-2.5 text-xs">
               {[
                 ['产品名称', '星耀童行 · 3D 场景辅助训练系统'],
-                ['原型版本', 'v0.1.0'],
+                ['原型版本', 'v0.2.0'],
                 ['运行模式', form.apiMode === 'mock' ? '演示模式' : '真实 API 模式'],
-                ['数据存储', '浏览器本地存储'],
+                ['数据存储', form.apiMode === 'mock' ? '浏览器本地存储' : 'PostgreSQL（后端 API）'],
+                ['身份验证', form.apiMode === 'mock' ? '演示模式（无鉴权）' : 'HttpOnly Cookie 会话'],
+                ['生成服务', '由后端环境变量配置（mock / real）'],
                 ['当前请求超时', `${form.requestTimeout} 毫秒`],
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between gap-3">
@@ -389,7 +398,7 @@ export default function SettingsPage() {
           <Alert
             tone="info"
             title="当前阶段说明"
-            description="本阶段不实现完整身份认证、角色权限与后台数据安全设施。代码结构已预留服务层与设置入口，便于后续补充。"
+            description="后端已提供登录、角色权限、数据持久化、文件上传与场景任务队列。真实 AI 分析、脚本生成与 3D 场景生成服务尚未接入，默认使用明确标记为演示数据的 mock Provider。"
           />
         </div>
       </div>

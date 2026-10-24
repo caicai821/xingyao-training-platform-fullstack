@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
+import { BrandMark } from '@/components/brand/BrandMark'
+import { useAppData } from '@/context/AppDataContext'
+import { useAuth } from '@/context/AuthContext'
 import LoginPage from '@/pages/LoginPage'
 import DashboardPage from '@/pages/DashboardPage'
 import LearnersPage from '@/pages/learners/LearnersPage'
@@ -35,13 +38,57 @@ function ScrollToTop() {
   return null
 }
 
+function AuthCheckingScreen() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-app-atmosphere px-6">
+      <div className="flex flex-col items-center text-center">
+        <div className="relative flex size-16 items-center justify-center">
+          <span className="absolute inset-1 rounded-full bg-accent-200/45 blur-2xl animate-pulse-soft" />
+          <BrandMark className="relative size-14" />
+        </div>
+        <p className="mt-4 text-sm font-medium text-ink-800">正在确认登录状态</p>
+        <p className="mt-1 text-xs text-ink-400">真实 API 模式需要先登录后访问训练工作区。</p>
+      </div>
+    </div>
+  )
+}
+
+function WorkspaceGuard() {
+  const { settings } = useAppData()
+  const { status } = useAuth()
+  const location = useLocation()
+
+  if (settings.apiMode !== 'live') return <AppLayout />
+  if (status === 'loading') return <AuthCheckingScreen />
+  if (status !== 'authenticated') {
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ from: `${location.pathname}${location.search}` }}
+      />
+    )
+  }
+  return <AppLayout />
+}
+
+function LoginRoute() {
+  const { settings } = useAppData()
+  const { status } = useAuth()
+  if (settings.apiMode === 'live') {
+    if (status === 'loading') return <AuthCheckingScreen />
+    if (status === 'authenticated') return <Navigate to="/dashboard" replace />
+  }
+  return <LoginPage />
+}
+
 export default function App() {
   return (
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="login" element={<LoginPage />} />
-        <Route element={<AppLayout />}>
+        <Route path="login" element={<LoginRoute />} />
+        <Route element={<WorkspaceGuard />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="learners" element={<LearnersPage />} />

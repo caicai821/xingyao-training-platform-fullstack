@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: qicheng-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: qicheng
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-qicheng_local_dev}
+      POSTGRES_DB: qicheng
+    ports:
+      - '5432:5432'
+    volumes:
+      - qicheng-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U qicheng -d qicheng']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  qicheng-db-data:

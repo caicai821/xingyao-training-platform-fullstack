@@ -163,7 +163,7 @@ export default function TaskDetailPage() {
         meta={
           <>
             <TaskStatusBadge status={task.status} />
-            <DemoBadge label="演示结果" />
+            {task.isDemo && <DemoBadge label="演示结果" />}
           </>
         }
         actions={
@@ -436,16 +436,48 @@ export default function TaskDetailPage() {
           <SectionCard
             title="生成结果"
             description="结果区域用于展示外部服务返回的图片、模型链接或场景访问地址。"
-            actions={<DemoBadge />}
+            actions={task.isDemo ? <DemoBadge /> : undefined}
             contentClassName="p-5 sm:p-6"
           >
             {task.status === 'succeeded' && task.result ? (
               <div>
-                <ScenePreview
-                  seed={task.result.previewSeed}
-                  sceneType={task.sceneConfig.sceneType}
-                  className="aspect-[16/9] w-full rounded-xl"
-                />
+                {task.result.previewUrl ? (
+                  <img
+                    src={task.result.previewUrl}
+                    alt={task.sceneName}
+                    className="aspect-[16/9] w-full rounded-xl object-cover"
+                  />
+                ) : (
+                  <ScenePreview
+                    seed={task.result.previewSeed}
+                    sceneType={task.sceneConfig.sceneType}
+                    className="aspect-[16/9] w-full rounded-xl"
+                  />
+                )}
+                {!task.isDemo && (task.result.sceneUrl || task.result.modelUrl) && (
+                  <div className="mt-3 flex flex-wrap gap-3 text-[11px]">
+                    {task.result.sceneUrl && (
+                      <a
+                        href={task.result.sceneUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-brand-600 underline"
+                      >
+                        打开场景
+                      </a>
+                    )}
+                    {task.result.modelUrl && (
+                      <a
+                        href={task.result.modelUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-brand-600 underline"
+                      >
+                        打开模型文件
+                      </a>
+                    )}
+                  </div>
+                )}
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
                   <div className="flex flex-wrap gap-2 text-[11px] text-ink-400">
                     <span>分辨率 {task.result.resolution}</span>

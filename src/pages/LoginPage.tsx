@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent, type InputHTMLAttributes, type ReactNode } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import {
   AlertCircle,
   ArrowRight,
@@ -18,6 +18,9 @@ import {
 import loginFamily from '@/assets/login-family.webp'
 import { BrandMark } from '@/components/brand/BrandMark'
 import { useToast } from '@/context/ToastContext'
+import { useAppData } from '@/context/AppDataContext'
+import { useAuth } from '@/context/AuthContext'
+import { errorMessageOf } from '@/services/http'
 import { cn, delay } from '@/lib/utils'
 
 type AuthMode = 'login' | 'register'
@@ -277,7 +280,11 @@ function SubmitButton({
 
 export default function LoginPage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { toast } = useToast()
+  const { settings, updateSettings } = useAppData()
+  const { status: authStatus, login } = useAuth()
+  const isLive = settings.apiMode === 'live'
   const [mode, setMode] = useState<AuthMode>('login')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -293,6 +300,7 @@ export default function LoginPage() {
   const [agreement, setAgreement] = useState(false)
   const [registerErrors, setRegisterErrors] = useState<RegisterErrors>({})
   const [submitting, setSubmitting] = useState(false)
+  const [formError, setFormError] = useState<string | null>(null)
 
   useEffect(() => {
     const previous = document.title
@@ -305,6 +313,19 @@ export default function LoginPage() {
     }
   }, [mode])
 
+  useEffect(() => {
+    if (!isLive) return
+    setMode('login')
+    setErrors({})
+    setRegisterErrors({})
+  }, [isLive])
+
+  useEffect(() => {
+    if (isLive && authStatus === 'authenticated') {
+      navigate('/dashboard', { replace: true })
+    }
+  }, [isLive, authStatus, navigate])
+
   const switchMode = (next: AuthMode) => {
     if (next === mode) return
     setMode(next)
@@ -312,7 +333,7 @@ export default function LoginPage() {
     setRegisterErrors({})
   }
 
-  const loginError = Object.values(errors).find(Boolean)
+  const loginError = Object.values(errors).find(Boolean) ?? formError ?? undefined
   const registerError = Object.values(registerErrors).find(Boolean)
 
   const fillDemoAccount = () => {
@@ -329,13 +350,43 @@ export default function LoginPage() {
     })
   }
 
+  const switchToDemo = () => {
+    updateSettings({ apiMode: 'mock' })
+    toast({
+      title: '已切换到演示模式',
+      description: '当前使用浏览器本地演示数据，无需后端服务。',
+      tone: 'info',
+    })
+    navigate('/dashboard')
+  }
+
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    setFormError(null)
     const nextErrors: LoginErrors = {}
     if (!username.trim()) nextErrors.username = '请输入账号或手机号'
     if (!password) nextErrors.password = '请输入密码'
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) return
+
+    if (isLive) {
+      setSubmitting(true)
+      try {
+        await login(username.trim(), password)
+        toast({
+          title: '登录成功',
+          description: '欢迎回来',
+          tone: 'success',
+        })
+        const from = (location.state as { from?: string } | null)?.from
+        navigate(from && from !== '/login' ? from : '/dashboard', { replace: true })
+      } catch (cause) {
+        setFormError(errorMessageOf(cause, '登录失败，请检查账号与密码'))
+      } finally {
+        setSubmitting(false)
+      }
+      return
+    }
 
     setSubmitting(true)
     await delay(700)
@@ -448,7 +499,7 @@ export default function LoginPage() {
 
           <div className="relative z-10 flex min-h-0 flex-1 flex-col items-center pb-3 pt-9 lg:pt-12">
             <div className="relative my-auto w-full max-w-[432px]">
-              <AuthNav mode={mode} onChange={switchMode} disabled={submitting} />
+              {!isLive && <AuthNav mode={mode} onChange={switchMode} disabled={submitting} />}
 
               <div
                 aria-hidden="true"
@@ -506,6 +557,7 @@ export default function LoginPage() {
                             error={errors.username}
                             onChange={(value) => {
                               setUsername(value)
+                              setFormError(null)
                               if (errors.username) setErrors((current) => ({ ...current, username: undefined }))
                             }}
                           />
@@ -527,6 +579,7 @@ export default function LoginPage() {
                             }
                             onChange={(value) => {
                               setPassword(value)
+                              setFormError(null)
                               if (errors.password) setErrors((current) => ({ ...current, password: undefined }))
                             }}
                           />
@@ -559,7 +612,9 @@ export default function LoginPage() {
                             onClick={() =>
                               toast({
                                 title: '演示环境',
-                                description: '暂未接入密码找回服务，请使用演示账号体验。',
+                                description: isLive
+                                  ? '请联系系统管理员重置密码。'
+                                  : '暂未接入密码找回服务，请使用演示账号体验。',
                                 tone: 'info',
                               })
                             }
@@ -572,17 +627,33 @@ export default function LoginPage() {
                         <SubmitButton submitting={submitting} label="登录" pendingLabel="正在登录..." />
                       </form>
 
-                      <button
-                        type="button"
-                        onClick={fillDemoAccount}
-                        className="auth-demo-row group/demo mt-3 flex w-full items-center justify-between gap-3 rounded-2xl border border-dashed border-[#ddc9b7]/80 bg-white/35 px-3.5 py-2.5 text-left shadow-[0_6px_18px_-16px_rgba(92,64,43,0.6)] backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:border-[#e3a26c] hover:bg-white/55 hover:shadow-[0_12px_24px_-16px_rgba(92,64,43,0.55)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#e7a46b]/15"
-                      >
-                        <span className="flex min-w-0 items-center gap-2 text-[11px] leading-5 text-[#917c6b]">
-                          <ShieldCheck className="size-3.5 shrink-0 text-[#c58a55]" strokeWidth={1.8} />
-                          演示环境 · 任意账号密码均可登录
-                        </span>
-                        <span className="shrink-0 text-[11px] font-medium text-[#ae6f3c]">填入演示账号</span>
-                      </button>
+                      {isLive ? (
+                        <div className="auth-demo-row mt-3 space-y-2 rounded-2xl border border-dashed border-[#ddc9b7]/80 bg-white/35 px-3.5 py-2.5 text-[11px] leading-5 text-[#917c6b] shadow-[0_6px_18px_-16px_rgba(92,64,43,0.6)] backdrop-blur-md">
+                          <div className="flex items-center gap-2">
+                            <ShieldCheck className="size-3.5 shrink-0 text-[#c58a55]" strokeWidth={1.8} />
+                            真实 API 模式 · 请使用后端初始化的账号登录
+                          </div>
+                          <button
+                            type="button"
+                            onClick={switchToDemo}
+                            className="w-full text-left text-[11px] font-medium text-[#a36a3f] underline decoration-[#e2b48f] underline-offset-2 transition hover:text-[#864d29]"
+                          >
+                            后端暂不可用？切换到演示模式
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={fillDemoAccount}
+                          className="auth-demo-row group/demo mt-3 flex w-full items-center justify-between gap-3 rounded-2xl border border-dashed border-[#ddc9b7]/80 bg-white/35 px-3.5 py-2.5 text-left shadow-[0_6px_18px_-16px_rgba(92,64,43,0.6)] backdrop-blur-md transition duration-200 hover:-translate-y-0.5 hover:border-[#e3a26c] hover:bg-white/55 hover:shadow-[0_12px_24px_-16px_rgba(92,64,43,0.55)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#e7a46b]/15"
+                        >
+                          <span className="flex min-w-0 items-center gap-2 text-[11px] leading-5 text-[#917c6b]">
+                            <ShieldCheck className="size-3.5 shrink-0 text-[#c58a55]" strokeWidth={1.8} />
+                            演示环境 · 任意账号密码均可登录
+                          </span>
+                          <span className="shrink-0 text-[11px] font-medium text-[#ae6f3c]">填入演示账号</span>
+                        </button>
+                      )}
 
                       <p className="auth-legal mt-3.5 text-center text-[10px] leading-4 tracking-[0.02em] text-[#a28e7e]">
                         登录即代表您同意星耀童行训练平台的服务与隐私说明

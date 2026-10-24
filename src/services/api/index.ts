@@ -17,69 +17,37 @@ import type {
   TrainingScript,
 } from '@/types'
 import type { SceneConfigInput, TrainingServices } from '../contracts'
+import { apiRequest, apiRequestOrNull, apiUpload } from '../http'
 import { getSettings, resetSettings, saveSettings } from '../settingsStore'
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const settings = getSettings()
-  const controller = new AbortController()
-  const timeout = window.setTimeout(() => controller.abort(), settings.requestTimeout)
-  try {
-    const response = await fetch(`${settings.apiBaseUrl.replace(/\/$/, '')}${path}`, {
-      ...init,
-      headers: {
-        'Content-Type': 'application/json',
-        ...(init?.headers ?? {}),
-      },
-      signal: controller.signal,
-    })
-    if (!response.ok) {
-      let message = `请求失败（HTTP ${response.status}）`
-      try {
-        const body = (await response.json()) as { message?: string }
-        if (body?.message) message = body.message
-      } catch {
-        // Keep the HTTP status message when the response body is not JSON.
-      }
-      throw new Error(message)
-    }
-    if (response.status === 204) return undefined as T
-    return (await response.json()) as T
-  } catch (error) {
-    if (error instanceof DOMException && error.name === 'AbortError') {
-      throw new Error('请求超时，请检查服务地址或稍后重试')
-    }
-    throw error
-  } finally {
-    window.clearTimeout(timeout)
-  }
-}
+const encode = encodeURIComponent
 
-const json = (body: unknown): RequestInit => ({
+const post = (body: unknown): RequestInit => ({
   method: 'POST',
   body: JSON.stringify(body),
 })
 
-const encode = encodeURIComponent
+const patch = (body: unknown): RequestInit => ({
+  method: 'PATCH',
+  body: JSON.stringify(body),
+})
 
 export const apiServices: TrainingServices = {
   learners: {
-    list: () => request<Learner[]>('/learners'),
-    get: (id) => request<Learner | null>(`/learners/${encode(id)}`),
-    create: (input: LearnerInput) => request<Learner>('/learners', json(input)),
+    list: () => apiRequest<Learner[]>('/learners?pageSize=200'),
+    get: (id) => apiRequestOrNull<Learner>(`/learners/${encode(id)}`),
+    create: (input: LearnerInput) => apiRequest<Learner>('/learners', post(input)),
     update: (id, input) =>
-      request<Learner>(`/learners/${encode(id)}`, {
-        method: 'PATCH',
-        body: JSON.stringify(input),
-      }),
+      apiRequest<Learner>(`/learners/${encode(id)}`, patch(input)),
   },
   assessments: {
-    list: () => request<AbilityAssessment[]>('/assessments'),
+    list: () => apiRequest<AbilityAssessment[]>('/assessments'),
     listByLearner: (learnerId) =>
-      request<AbilityAssessment[]>(`/learners/${encode(learnerId)}/assessments`),
+      apiRequest<AbilityAssessment[]>(`/learners/${encode(learnerId)}/assessments`),
     save: (input: { learnerId: string; scores: AbilityScores; generalNotes: string; author?: string }) =>
-      request<AbilityAssessment>(
+      apiRequest<AbilityAssessment>(
         `/learners/${encode(input.learnerId)}/assessments`,
-        json({
+        post({
           scores: input.scores,
           generalNotes: input.generalNotes,
           author: input.author,
@@ -87,99 +55,83 @@ export const apiServices: TrainingServices = {
       ),
   },
   profiles: {
-    list: () => request<AbilityProfile[]>('/ability-profiles'),
+    list: () => apiRequest<AbilityProfile[]>('/profiles?pageSize=200'),
     listByLearner: (learnerId) =>
-      request<AbilityProfile[]>(`/learners/${encode(learnerId)}/ability-profiles`),
+      apiRequest<AbilityProfile[]>(`/learners/${encode(learnerId)}/profiles`),
     generate: (input) =>
-      request<AbilityProfile>(
-        `/learners/${encode(input.learnerId)}/ability-profile/generate`,
-        json({ assessmentId: input.assessmentId, extraNotes: input.extraNotes }),
+      apiRequest<AbilityProfile>(
+        `/learners/${encode(input.learnerId)}/profiles`,
+        post({ assessmentId: input.assessmentId, extraNotes: input.extraNotes }),
       ),
-    update: (id, patch) =>
-      request<AbilityProfile>(`/ability-profiles/${encode(id)}`, {
-        method: 'PATCH',
-        body: JSON.stringify(patch),
-      }),
+    update: (id, input) =>
+      apiRequest<AbilityProfile>(`/profiles/${encode(id)}`, patch(input)),
     confirm: (id) =>
-      request<AbilityProfile>(`/ability-profiles/${encode(id)}/confirm`, { method: 'POST' }),
+      apiRequest<AbilityProfile>(`/profiles/${encode(id)}/confirm`, { method: 'POST' }),
   },
   goals: {
-    list: () => request<TrainingGoal[]>('/training-goals'),
-    get: (id) => request<TrainingGoal | null>(`/training-goals/${encode(id)}`),
+    list: () => apiRequest<TrainingGoal[]>('/training-goals?pageSize=200'),
+    get: (id) => apiRequestOrNull<TrainingGoal>(`/training-goals/${encode(id)}`),
     create: (input: TrainingGoalInput) =>
-      request<TrainingGoal>('/training-goals', json(input)),
+      apiRequest<TrainingGoal>('/training-goals', post(input)),
     update: (id, input) =>
-      request<TrainingGoal>(`/training-goals/${encode(id)}`, {
-        method: 'PATCH',
-        body: JSON.stringify(input),
-      }),
+      apiRequest<TrainingGoal>(`/training-goals/${encode(id)}`, patch(input)),
   },
   scripts: {
-    list: () => request<TrainingScript[]>('/training-scripts'),
-    get: (id) => request<TrainingScript | null>(`/training-scripts/${encode(id)}`),
+    list: () => apiRequest<TrainingScript[]>('/training-scripts?pageSize=200'),
+    get: (id) => apiRequestOrNull<TrainingScript>(`/training-scripts/${encode(id)}`),
     generate: (input: ScriptGenerationInput) =>
-      request<TrainingScript>('/training-scripts/generate', json(input)),
-    update: (id, patch, versionNote) =>
-      request<TrainingScript>(
-        `/training-scripts/${encode(id)}${versionNote ? `?versionNote=${encode(versionNote)}` : ''}`,
-        {
-          method: 'PATCH',
-          body: JSON.stringify(patch),
-        },
-      ),
+      apiRequest<TrainingScript>('/training-scripts/generate', post(input)),
+    update: (id, input, versionNote) => {
+      const query = versionNote ? `?versionNote=${encode(versionNote)}` : ''
+      return apiRequest<TrainingScript>(
+        `/training-scripts/${encode(id)}${query}`,
+        patch(input),
+      )
+    },
     confirm: (id) =>
-      request<TrainingScript>(`/training-scripts/${encode(id)}/confirm`, { method: 'POST' }),
+      apiRequest<TrainingScript>(`/training-scripts/${encode(id)}/confirm`, {
+        method: 'POST',
+      }),
     regenerate: (id, overrides?: Partial<SceneConfigInput>) =>
-      request<TrainingScript>(
+      apiRequest<TrainingScript>(
         `/training-scripts/${encode(id)}/regenerate`,
-        json(overrides ?? {}),
+        post(overrides ?? {}),
       ),
     duplicate: (id) =>
-      request<TrainingScript>(`/training-scripts/${encode(id)}/duplicate`, { method: 'POST' }),
+      apiRequest<TrainingScript>(`/training-scripts/${encode(id)}/duplicate`, {
+        method: 'POST',
+      }),
   },
   tasks: {
-    list: () => request<SceneTask[]>('/scene-tasks'),
-    get: (id) => request<SceneTask | null>(`/scene-tasks/${encode(id)}`),
-    create: (input: SceneGenerationInput, _options: SceneTaskSubmitOptions) =>
-      request<SceneTask>('/scene-tasks', json(input)),
+    list: () => apiRequest<SceneTask[]>('/scene-tasks?pageSize=200'),
+    get: (id) => apiRequestOrNull<SceneTask>(`/scene-tasks/${encode(id)}`),
+    create: (input: SceneGenerationInput, options: SceneTaskSubmitOptions) =>
+      apiRequest<SceneTask>('/scene-tasks', post({ ...input, submit: options.submit })),
     submit: (id) =>
-      request<SceneTask>(`/scene-tasks/${encode(id)}/submit`, { method: 'POST' }),
+      apiRequest<SceneTask>(`/scene-tasks/${encode(id)}/submit`, { method: 'POST' }),
     retry: (id) =>
-      request<SceneTask>(`/scene-tasks/${encode(id)}/retry`, { method: 'POST' }),
+      apiRequest<SceneTask>(`/scene-tasks/${encode(id)}/retry`, { method: 'POST' }),
     sync: async () => {
-      await request<SceneTask[]>('/scene-tasks')
+      await apiRequest<SceneTask[]>('/scene-tasks?pageSize=200')
     },
   },
   assets: {
-    list: () => request<SceneAsset[]>('/scene-assets'),
-    get: (id) => request<SceneAsset | null>(`/scene-assets/${encode(id)}`),
-    update: (id, patch) =>
-      request<SceneAsset>(`/scene-assets/${encode(id)}`, {
-        method: 'PATCH',
-        body: JSON.stringify(patch),
-      }),
+    list: () => apiRequest<SceneAsset[]>('/scene-assets?pageSize=200'),
+    get: (id) => apiRequestOrNull<SceneAsset>(`/scene-assets/${encode(id)}`),
+    update: (id, input) =>
+      apiRequest<SceneAsset>(`/scene-assets/${encode(id)}`, patch(input)),
   },
   activities: {
-    list: () => request<Activity[]>('/activities'),
+    list: () => apiRequest<Activity[]>('/activities'),
   },
   uploads: {
     async uploadImage(file, onProgress) {
-      onProgress?.(10)
-      const settings = getSettings()
-      const form = new FormData()
-      form.append('file', file)
-      const response = await fetch(settings.uploadUrl, {
-        method: 'POST',
-        body: form,
-      })
-      if (!response.ok) throw new Error(`图片上传失败（HTTP ${response.status}）`)
-      const payload = (await response.json()) as Partial<ImageReference> & { url?: string }
-      onProgress?.(100)
+      const payload = await apiUpload<ImageReference & { url?: string }>(file, onProgress)
       return {
-        id: payload.id ?? `img_${Date.now()}`,
-        name: payload.name ?? file.name,
-        size: payload.size ?? file.size,
-        type: payload.type ?? file.type,
+        id: payload.id,
+        name: payload.name,
+        size: payload.size,
+        type: payload.type,
         previewUrl: payload.previewUrl ?? payload.url,
       }
     },
@@ -188,8 +140,8 @@ export const apiServices: TrainingServices = {
     get(): AppSettings {
       return getSettings()
     },
-    save(patch) {
-      return saveSettings(patch)
+    save(patchValue) {
+      return saveSettings(patchValue)
     },
     reset() {
       return resetSettings()

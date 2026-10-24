@@ -20,6 +20,8 @@ import {
   X,
 } from 'lucide-react'
 import { useAppData } from '@/context/AppDataContext'
+import { useAuth } from '@/context/AuthContext'
+import { roleLabel } from '@/services/auth'
 import { Badge, Modal } from '@/components/ui'
 import { Button, IconButton } from '@/components/ui/Button'
 import { relativeTime } from '@/lib/utils'
@@ -34,7 +36,11 @@ interface SearchResult {
 
 export function Topbar({ onOpenSidebar }: { onOpenSidebar: () => void }) {
   const { learners, scripts, assets, tasks, activities, settings } = useAppData()
+  const { user, logout } = useAuth()
   const navigate = useNavigate()
+  const isLive = settings.apiMode === 'live'
+  const displayName = isLive ? (user?.displayName ?? '未登录') : '星耀童行管理员'
+  const roleName = isLive ? (user ? roleLabel[user.role] : '') : '系统管理员'
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
@@ -283,8 +289,8 @@ export function Topbar({ onOpenSidebar }: { onOpenSidebar: () => void }) {
               <UserRound className="size-[15px]" strokeWidth={1.8} />
             </span>
             <span className="hidden min-w-0 sm:block">
-              <span className="block text-xs font-medium leading-4 text-ink-800">星耀童行管理员</span>
-              <span className="block text-[10px] leading-4 text-ink-400">系统管理员</span>
+              <span className="block text-xs font-medium leading-4 text-ink-800">{displayName}</span>
+              <span className="block text-[10px] leading-4 text-ink-400">{roleName}</span>
             </span>
             <ChevronDown
               className={cn('hidden size-3 text-ink-400 transition sm:block', accountOpen && 'rotate-180')}
@@ -299,8 +305,10 @@ export function Topbar({ onOpenSidebar }: { onOpenSidebar: () => void }) {
                     <UserRound className="size-4" strokeWidth={1.8} />
                   </span>
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold text-ink-900">星耀童行管理员</p>
-                    <p className="mt-0.5 text-[10px] text-ink-400">系统管理员 · 演示环境</p>
+                    <p className="text-xs font-semibold text-ink-900">{displayName}</p>
+                    <p className="mt-0.5 text-[10px] text-ink-400">
+                      {isLive ? roleName : '系统管理员 · 演示环境'}
+                    </p>
                   </div>
                 </div>
                 <div className="py-1.5">
@@ -324,7 +332,14 @@ export function Topbar({ onOpenSidebar }: { onOpenSidebar: () => void }) {
                 <div className="border-t border-line/70 py-1.5">
                   <button
                     type="button"
-                    onClick={() => go('/login')}
+                    onClick={() => {
+                      setAccountOpen(false)
+                      if (isLive) {
+                        void logout().finally(() => navigate('/login'))
+                      } else {
+                        go('/login')
+                      }
+                    }}
                     className="flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-[13px] text-ink-500 transition hover:bg-ink-50 hover:text-ink-700"
                   >
                     <LogOut className="size-4 text-ink-400" strokeWidth={1.8} />
@@ -332,8 +347,13 @@ export function Topbar({ onOpenSidebar }: { onOpenSidebar: () => void }) {
                   </button>
                 </div>
                 <div className="flex items-center gap-2 border-t border-line/70 px-4 py-2.5 text-[10px] text-ink-400">
-                  <span className="size-1.5 rounded-full bg-warning-500" />
-                  演示模式 · 本地模拟数据
+                  <span
+                    className={cn(
+                      'size-1.5 rounded-full',
+                      isLive ? 'bg-success-500' : 'bg-warning-500',
+                    )}
+                  />
+                  {isLive ? '真实 API · 数据库持久化' : '演示模式 · 本地模拟数据'}
                 </div>
               </div>
             </>

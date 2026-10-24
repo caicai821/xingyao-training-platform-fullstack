@@ -1,14 +1,16 @@
 import type { AppSettings } from '@/types'
 
 const SETTINGS_KEY = 'qicheng_settings_v1'
+export const SETTINGS_CHANGED_EVENT = 'qicheng:settings-changed'
 
 const env = import.meta.env
 const envTimeout = Number(env.VITE_REQUEST_TIMEOUT)
+const envBaseUrl = env.VITE_API_BASE_URL || 'http://localhost:4000/api/v1'
 
 export const DEFAULT_SETTINGS: AppSettings = {
   apiMode: env.VITE_API_MODE === 'live' ? 'live' : 'mock',
-  apiBaseUrl: env.VITE_API_BASE_URL || 'https://api.example.com/v1',
-  uploadUrl: env.VITE_UPLOAD_URL || 'https://upload.example.com/v1/files',
+  apiBaseUrl: envBaseUrl,
+  uploadUrl: env.VITE_UPLOAD_URL || `${envBaseUrl.replace(/\/$/, '')}/uploads`,
   requestTimeout: Number.isFinite(envTimeout) && envTimeout > 0 ? envTimeout : 30000,
   simulateFailure: false,
   simulateDelay: 900,
@@ -31,6 +33,11 @@ export function saveSettings(patch: Partial<AppSettings>): AppSettings {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(next))
   } catch {
     // Storage may be unavailable; settings remain limited to this session.
+  }
+  try {
+    window.dispatchEvent(new Event(SETTINGS_CHANGED_EVENT))
+  } catch {
+    // Non-browser environments do not need cross-module notifications.
   }
   return next
 }

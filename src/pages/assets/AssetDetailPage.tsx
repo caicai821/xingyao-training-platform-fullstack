@@ -120,7 +120,7 @@ export default function AssetDetailPage() {
           <>
             <Badge tone="success">已生成</Badge>
             <SourceTypeBadge sourceType={asset.sourceType} />
-            <DemoBadge label="演示资产" />
+            {asset.isDemo && <DemoBadge label="演示资产" />}
           </>
         }
         actions={
@@ -147,17 +147,39 @@ export default function AssetDetailPage() {
           <Card className="overflow-hidden">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line px-5 py-3.5">
               <p className="text-[13px] font-medium text-ink-800">场景预览</p>
-              <Badge tone="neutral" className="border-dashed">
-                非真实生成结果
-              </Badge>
+              {asset.isDemo ? (
+                <Badge tone="neutral" className="border-dashed">
+                  非真实生成结果
+                </Badge>
+              ) : (
+                <Badge tone="success">真实生成结果</Badge>
+              )}
             </div>
-            <ScenePreview
-              seed={asset.previewSeed}
-              sceneType={asset.sceneType}
-              className="aspect-[16/10] w-full"
-            />
+            {asset.previewUrl ? (
+              <img
+                src={asset.previewUrl}
+                alt={asset.name}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            ) : (
+              <ScenePreview
+                seed={asset.previewSeed}
+                sceneType={asset.sceneType}
+                className="aspect-[16/10] w-full"
+              />
+            )}
             <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line px-5 py-3.5 text-[11px] text-ink-400">
               <span>关联任务 {task?.code ?? '—'}</span>
+              {asset.sceneUrl && (
+                <a
+                  href={asset.sceneUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-brand-600 underline"
+                >
+                  打开场景
+                </a>
+              )}
               <span>生成时间 {formatDateTime(asset.createdAt)}</span>
             </div>
           </Card>

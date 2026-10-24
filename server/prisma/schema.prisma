@@ -1,0 +1,432 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+enum UserStatus {
+  ACTIVE
+  DISABLED
+}
+
+enum LearnerStatus {
+  ACTIVE
+  PAUSED
+  ARCHIVED
+}
+
+enum ProfileStatus {
+  UNCONFIRMED
+  CONFIRMED
+}
+
+enum GoalStatus {
+  PLANNING
+  IN_PROGRESS
+  COMPLETED
+  ARCHIVED
+}
+
+enum GoalPriority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum ScriptStatus {
+  DRAFT
+  GENERATED
+  CONFIRMED
+  ARCHIVED
+}
+
+enum SceneSourceType {
+  TEXT
+  IMAGE
+  SCRIPT
+}
+
+enum SceneTaskStatus {
+  DRAFT
+  PENDING
+  QUEUED
+  GENERATING
+  SUCCEEDED
+  FAILED
+}
+
+enum ActivityType {
+  LEARNER
+  ASSESSMENT
+  PROFILE
+  GOAL
+  SCRIPT
+  TASK
+  ASSET
+}
+
+model User {
+  id           String     @id @default(cuid())
+  username     String     @unique
+  passwordHash String
+  displayName  String
+  role         UserRole   @default(USER)
+  status       UserStatus @default(ACTIVE)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  sessions Session[]
+
+  learners            Learner[]               @relation("LearnerCreator")
+  assessments         AbilityAssessment[]     @relation("AssessmentCreator")
+  profiles            AbilityProfile[]        @relation("ProfileCreator")
+  confirmedProfiles   AbilityProfile[]        @relation("ProfileConfirmer")
+  profileRevisions    AbilityProfileRevision[] @relation("ProfileRevisionCreator")
+  goals               TrainingGoal[]          @relation("GoalCreator")
+  scripts             TrainingScript[]        @relation("ScriptCreator")
+  confirmedScripts    TrainingScript[]        @relation("ScriptConfirmer")
+  scriptVersions      ScriptVersion[]         @relation("ScriptVersionCreator")
+  tasks               SceneTask[]             @relation("TaskCreator")
+  assets              SceneAsset[]            @relation("AssetCreator")
+  uploads             UploadFile[]
+  activities          Activity[]
+
+  @@map("users")
+}
+
+model Session {
+  id         String   @id @default(cuid())
+  tokenHash  String   @unique
+  userId     String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  lastUsedAt DateTime @default(now())
+  userAgent  String?
+  ipAddress  String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model Learner {
+  id                 String        @id @default(cuid())
+  code               String        @unique
+  name               String
+  nickname           String?
+  ageGroup           String
+  status             LearnerStatus @default(ACTIVE)
+  traits             String[]      @default([])
+  interests          String[]      @default([])
+  communicationStyle String        @default("")
+  promptPreference   String        @default("")
+  environmentNotes   String        @default("")
+  currentGoalText    String        @default("")
+  notes              String        @default("")
+  lastAssessmentAt   DateTime?
+  archivedAt         DateTime?
+  createdById        String?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  createdBy   User?               @relation("LearnerCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  assessments AbilityAssessment[]
+  profiles    AbilityProfile[]
+  goals       TrainingGoal[]
+  scripts     TrainingScript[]
+  tasks       SceneTask[]
+  assets      SceneAsset[]
+
+  @@index([status])
+  @@index([name])
+  @@index([updatedAt])
+  @@map("learners")
+}
+
+model AbilityAssessment {
+  id           String   @id @default(cuid())
+  learnerId    String
+  author       String   @default("")
+  scores       Json
+  generalNotes String   @default("")
+  createdById  String?
+  createdAt    DateTime @default(now())
+
+  learner   Learner  @relation(fields: [learnerId], references: [id], onDelete: Restrict)
+  createdBy User?    @relation("AssessmentCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  profiles  AbilityProfile[]
+
+  @@index([learnerId, createdAt])
+  @@map("ability_assessments")
+}
+
+model AbilityProfile {
+  id                   String        @id @default(cuid())
+  learnerId            String
+  assessmentId         String
+  status               ProfileStatus @default(UNCONFIRMED)
+  summary              String        @default("")
+  strengths            String[]      @default([])
+  developmentAreas     String[]      @default([])
+  recommendations      String[]      @default([])
+  dimensionInsights    Json
+  observationSnapshot  String        @default("")
+  generatedBy          String        @default("mock")
+  isDemo               Boolean       @default(true)
+  createdById          String?
+  confirmedById        String?
+  confirmedAt          DateTime?
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  learner      Learner                  @relation(fields: [learnerId], references: [id], onDelete: Restrict)
+  assessment   AbilityAssessment        @relation(fields: [assessmentId], references: [id], onDelete: Restrict)
+  createdBy    User?                    @relation("ProfileCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  confirmedBy  User?                    @relation("ProfileConfirmer", fields: [confirmedById], references: [id], onDelete: SetNull)
+  revisions    AbilityProfileRevision[]
+  goals        TrainingGoal[]
+
+  @@index([learnerId, createdAt])
+  @@index([status])
+  @@map("ability_profiles")
+}
+
+model AbilityProfileRevision {
+  id          String   @id @default(cuid())
+  profileId   String
+  revision    Int
+  action      String
+  snapshot    Json
+  note        String   @default("")
+  createdById String?
+  createdAt   DateTime @default(now())
+
+  profile   AbilityProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  createdBy User?          @relation("ProfileRevisionCreator", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@unique([profileId, revision])
+  @@index([profileId, createdAt])
+  @@map("ability_profile_revisions")
+}
+
+model TrainingGoal {
+  id                 String       @id @default(cuid())
+  learnerId          String
+  profileId          String?
+  title              String
+  category           String       @default("")
+  description        String       @default("")
+  successCriteria    String       @default("")
+  relatedDimensions  String[]     @default([])
+  priority           GoalPriority @default(MEDIUM)
+  status             GoalStatus   @default(PLANNING)
+  targetDate         DateTime?
+  archivedAt         DateTime?
+  createdById        String?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+
+  learner   Learner          @relation(fields: [learnerId], references: [id], onDelete: Restrict)
+  profile   AbilityProfile?  @relation(fields: [profileId], references: [id], onDelete: SetNull)
+  createdBy User?            @relation("GoalCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  scripts   TrainingScript[]
+  tasks     SceneTask[]
+  assets    SceneAsset[]
+
+  @@index([learnerId, status])
+  @@index([profileId])
+  @@map("training_goals")
+}
+
+model TrainingScript {
+  id                  String       @id @default(cuid())
+  code                String       @unique
+  learnerId           String
+  goalId              String
+  name                String
+  objective           String       @default("")
+  scenarioSummary     String       @default("")
+  status              ScriptStatus @default(DRAFT)
+  version             Int          @default(1)
+  preparation         String[]     @default([])
+  environmentElements String[]     @default([])
+  steps               Json
+  sceneAdaptation     String       @default("")
+  cautions            String[]     @default([])
+  sceneConfig         Json
+  generatedBy         String       @default("mock")
+  isDemo              Boolean      @default(true)
+  createdById         String?
+  confirmedById       String?
+  confirmedAt         DateTime?
+  archivedAt          DateTime?
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  learner     Learner         @relation(fields: [learnerId], references: [id], onDelete: Restrict)
+  goal        TrainingGoal    @relation(fields: [goalId], references: [id], onDelete: Restrict)
+  createdBy   User?           @relation("ScriptCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  confirmedBy User?           @relation("ScriptConfirmer", fields: [confirmedById], references: [id], onDelete: SetNull)
+  versions    ScriptVersion[]
+  tasks       SceneTask[]
+  assets      SceneAsset[]
+
+  @@index([learnerId, updatedAt])
+  @@index([goalId])
+  @@index([status])
+  @@map("training_scripts")
+}
+
+model ScriptVersion {
+  id                String   @id @default(cuid())
+  scriptId          String
+  version           Int
+  savedAt           DateTime @default(now())
+  name              String
+  objective         String   @default("")
+  scenarioSummary   String   @default("")
+  steps             Json
+  note              String   @default("")
+  createdById       String?
+
+  script    TrainingScript @relation(fields: [scriptId], references: [id], onDelete: Cascade)
+  createdBy User?          @relation("ScriptVersionCreator", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([scriptId, version])
+  @@index([scriptId, savedAt])
+  @@map("script_versions")
+}
+
+model SceneTask {
+  id               String          @id @default(cuid())
+  code             String          @unique
+  sourceType       SceneSourceType
+  sceneName        String
+  scenePurpose     String          @default("")
+  prompt           String          @default("")
+  learnerId        String?
+  trainingGoalId   String?
+  scriptId         String?
+  imageReferences  Json            @default("[]")
+  sceneConfig      Json
+  status           SceneTaskStatus @default(DRAFT)
+  progress         Int             @default(0)
+  errorCode        String?
+  errorMessage     String?
+  result           Json?
+  providerMode     String          @default("mock")
+  providerJobId    String?
+  attempts         Int             @default(0)
+  isDemo           Boolean         @default(true)
+  createdById      String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  submittedAt      DateTime?
+  completedAt      DateTime?
+
+  learner   Learner?     @relation(fields: [learnerId], references: [id], onDelete: SetNull)
+  goal      TrainingGoal? @relation(fields: [trainingGoalId], references: [id], onDelete: SetNull)
+  script    TrainingScript? @relation(fields: [scriptId], references: [id], onDelete: SetNull)
+  createdBy User?        @relation("TaskCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  files     SceneTaskFile[]
+  asset     SceneAsset?
+
+  @@index([status, updatedAt])
+  @@index([createdAt])
+  @@index([learnerId])
+  @@index([scriptId])
+  @@map("scene_tasks")
+}
+
+model SceneTaskFile {
+  taskId String
+  fileId String
+
+  task SceneTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  file UploadFile @relation(fields: [fileId], references: [id], onDelete: Restrict)
+
+  @@id([taskId, fileId])
+  @@index([fileId])
+  @@map("scene_task_files")
+}
+
+model SceneAsset {
+  id             String          @id @default(cuid())
+  taskId         String          @unique
+  name           String
+  sceneType      String          @default("")
+  description    String          @default("")
+  learnerId      String?
+  trainingGoalId String?
+  scriptId       String?
+  sourceType     SceneSourceType
+  tags           String[]        @default([])
+  previewSeed    String
+  previewFileId  String?
+  previewUrl     String?
+  sceneFileUrl   String?
+  sceneUrl       String?
+  isDemo         Boolean         @default(true)
+  note           String          @default("")
+  archivedAt     DateTime?
+  createdById    String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  task         SceneTask    @relation(fields: [taskId], references: [id], onDelete: Restrict)
+  learner      Learner?     @relation(fields: [learnerId], references: [id], onDelete: SetNull)
+  goal         TrainingGoal? @relation(fields: [trainingGoalId], references: [id], onDelete: SetNull)
+  script       TrainingScript? @relation(fields: [scriptId], references: [id], onDelete: SetNull)
+  previewFile  UploadFile?  @relation("AssetPreviewFile", fields: [previewFileId], references: [id], onDelete: SetNull)
+  createdBy    User?        @relation("AssetCreator", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([createdAt])
+  @@index([learnerId])
+  @@index([scriptId])
+  @@index([archivedAt])
+  @@map("scene_assets")
+}
+
+model UploadFile {
+  id           String   @id @default(cuid())
+  originalName String
+  storageName  String
+  mimeType     String
+  size         Int
+  storageKey   String   @unique
+  checksum     String?
+  uploadedById String?
+  createdAt    DateTime @default(now())
+
+  uploadedBy    User?         @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  taskFiles     SceneTaskFile[]
+  previewAssets SceneAsset[]  @relation("AssetPreviewFile")
+
+  @@index([uploadedById, createdAt])
+  @@map("upload_files")
+}
+
+model Activity {
+  id        String       @id @default(cuid())
+  type      ActivityType
+  title     String
+  detail    String       @default("")
+  link      String?
+  actorId   String?
+  at        DateTime     @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([at])
+  @@map("activities")
+}

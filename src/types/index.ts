@@ -70,6 +70,7 @@ export interface AbilityProfile {
   observationSnapshot: string
   generatedBy: 'mock' | 'api'
   isDemo: boolean
+  confirmedAt?: string
 }
 
 export interface AbilityProfileInput {
@@ -94,6 +95,7 @@ export interface TrainingGoal {
   targetDate?: string
   createdAt: string
   updatedAt: string
+  profileId?: string
 }
 
 export type TrainingGoalInput = Omit<TrainingGoal, 'id' | 'createdAt' | 'updatedAt'>
@@ -154,6 +156,7 @@ export interface TrainingScript {
   history: ScriptVersion[]
   generatedBy: 'mock' | 'api'
   isDemo: boolean
+  confirmedAt?: string
 }
 
 export interface ScriptGenerationInput {
@@ -210,6 +213,8 @@ export interface SceneGenerationInput {
 export interface SceneTaskResult {
   previewSeed: string
   resolution: string
+  previewUrl?: string
+  sceneFileUrl?: string
   modelUrl?: string
   sceneUrl?: string
   notes: string
@@ -237,6 +242,7 @@ export interface SceneTask {
   result?: SceneTaskResult
   error?: { code: string; message: string }
   assetId?: string
+  providerMode?: 'mock' | 'real'
   isDemo: boolean
   willFail?: boolean
 }
@@ -259,8 +265,12 @@ export interface SceneAsset {
   updatedAt: string
   tags: string[]
   previewSeed: string
+  previewUrl?: string
+  sceneFileUrl?: string
+  sceneUrl?: string
   isDemo: boolean
   note: string
+  archivedAt?: string
 }
 
 export type ActivityType =
