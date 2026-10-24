@@ -150,7 +150,21 @@ ADMIN_USERNAME=admin ADMIN_PASSWORD='请替换为至少8位的本地密码' npm 
 
 也可以把 `ADMIN_USERNAME` / `ADMIN_PASSWORD` 写入本机 `server/.env`（该文件已被忽略）后执行 `npm run create-admin`。脚本会创建或重置管理员密码。
 
-### 3.6 启动后端
+### 3.6 初始化演示数据
+
+仓库提供了一份已脱敏的演示数据：4 位学员、4 份能力评估与画像、4 个训练目标、4 个训练脚本、8 个场景任务、8 个场景资产和 44 条动态，并附带 4 张示例图片。建议在创建管理员后执行：
+
+```bash
+cd server
+npm run db:seed
+```
+
+- 数据位于 `server/prisma/demo-data.json`，图片位于 `server/prisma/demo-files/`，会按 `UPLOAD_DIR` 复制到上传目录。
+- 已脱敏：不含账号密码、会话记录或真实姓名；记录创建人留空，可在登录后按需归属。
+- 写入在单个事务内完成，按记录 id 跳过已存在项；重复执行不会覆盖手工修改的数据。
+- 如需在空库中重新体验完整演示，重建数据库后依次执行迁移、创建管理员和本命令。
+
+### 3.7 启动后端
 
 ```bash
 cd server
@@ -162,7 +176,7 @@ npm run dev
 - Swagger UI：`http://localhost:4000/api/docs`
 - OpenAPI JSON：`http://localhost:4000/api/docs/json`
 
-### 3.7 启动前端
+### 3.8 启动前端
 
 ```bash
 # 仓库根目录
@@ -470,7 +484,8 @@ npm test
 - 若运行中切换后端生成服务模式（mock ↔ real），已排队/生成中的任务会被标记为失败并提示重新提交。
 - 归档记录可在数据库中保留，但前端暂未提供“恢复归档”入口。
 - Docker 镜像仅包含 PostgreSQL 服务；后端与前端按本文档使用 npm 启动。当前环境未执行 Docker 验证。
-- Fastify 默认关闭反向代理信任（`trustProxy: false`）。部署在 Nginx / 负载均衡之后时，需要按实际网络配置开启，否则限流与登录锁定会按代理 IP 统计。
+- Fastify 默认关闭反向代理信任（`server/src/app.ts:88` 的 `trustProxy: false`）。部署在 Nginx / 负载均衡之后时，需要按实际网络配置开启，否则限流与登录锁定会按代理 IP 统计。
+- 仓库为公开仓库；提交的演示数据（`server/prisma/demo-data.json` 与示例图片）已脱敏，不包含账号密码、会话令牌或真实姓名。
 
 ---
 
@@ -485,3 +500,57 @@ npm test
 | 训练 | 训练目标列表/创建、训练脚本列表、四步生成向导、脚本详情与编辑 |
 | 3D 场景 | 场景生成中心、文本创建、图像上传、基于脚本创建、任务列表/详情/结果预览 |
 | 资产与记录 | 场景资产库、资产详情、方案与任务记录、系统设置 |
+
+---
+
+## 13. 生产部署
+
+### 13.1 构建与启动
+
+前端是纯静态资源，后端是 Node 服务，两者分别部署：
+
+```bash
+# 前端（仓库根目录）：API 地址在构建期写入产物
+VITE_API_MODE=live \
+VITE_API_BASE_URL=https://api.example.com/api/v1 \
+VITE_UPLOAD_URL=https://api.example.com/api/v1/uploads \
+npm ci && npm run build
+# 将 dist/ 交给 Nginx 等静态服务器托管，并为 SPA 配置回退到 index.html
+
+# 后端
+cd server
+npm ci
+npm run migrate:deploy
+npm run build
+npm start
+```
+
+`VITE_API_MODE`、`VITE_API_BASE_URL`、`VITE_UPLOAD_URL` 都是构建期变量，修改后必须重新构建前端。后端可用 systemd、pm2 或容器托管，工作目录需为 `server/`，否则 `UPLOAD_DIR=./uploads` 会解析到意外位置。
+
+需要演示数据时，再执行一次 `npm run db:seed`（见 3.6）。
+
+### 13.2 必须调整的配置
+
+| 变量 | 生产建议 |
+| --- | --- |
+| `NODE_ENV` | `production` |
+| `DATABASE_URL` | 指向独立 PostgreSQL，不要使用 embedded-postgres |
+| `COOKIE_SECURE` | `true`，站点通过 HTTPS 访问 |
+| `CORS_ORIGINS` | 只填写真实前端来源，多个用逗号分隔 |
+| `PUBLIC_BASE_URL` | 后端对外地址，用于生成上传文件链接 |
+| `UPLOAD_SIGNING_SECRET` | 固定随机值，例如 `openssl rand -hex 32`；变更后旧链接立即失效 |
+| `UPLOAD_DIR` | 绝对路径，挂载独立持久卷并纳入备份 |
+| `DOCS_ENABLED` | `false`，关闭 Swagger |
+| `ADMIN_*` | 仅通过环境变量提供给 `npm run create-admin`，不要写入仓库 |
+
+### 13.3 数据库与备份
+
+- 演示或小型部署可用 `docker-compose.yml` 启动 PostgreSQL 16。`server/.devdb` 是 embedded-postgres 18 的物理数据目录，只用于本地开发，不可复制到其他机器或作为生产库。
+- 迁移统一使用 `npm run migrate:deploy`。跨大版本（如 16 → 18）迁移需使用目标版本的 `pg_dump` / `pg_restore`，不能物理拷贝数据目录。
+- 定期备份数据库与上传目录：用 `pg_dump -Fc` 导出数据库，同时同步 `UPLOAD_DIR`。
+- 登录限流与后台任务运行器目前是单进程内存态，生产请保持后端单实例，或按第 11 节替换为共享存储与独立队列。
+
+### 13.4 反向代理注意事项
+
+- 部署在 Nginx / 负载均衡之后时，需要开启 Fastify 的 `trustProxy` 并只信任真实代理（当前版本在 `server/src/app.ts:88` 固定为 `false`，需按部署环境调整），否则限流与登录锁定会按代理 IP 统计。
+- Nginx 需为前端配置 SPA 回退（`try_files $uri /index.html`），并将请求体大小限制调整到不低于 `MAX_UPLOAD_BYTES`。

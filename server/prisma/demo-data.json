@@ -1,0 +1,2663 @@
+{
+  "learners": [
+    {
+      "id": "cmvmhvozb0005vl70jlkdylbq",
+      "code": "XS-2026-001",
+      "name": "学员01",
+      "nickname": null,
+      "ageGroup": "6-8 岁",
+      "status": "ACTIVE",
+      "traits": [
+        "喜欢结构化任务",
+        "对声音敏感"
+      ],
+      "interests": [
+        "积木",
+        "绘本"
+      ],
+      "communicationStyle": "沟通方式示例：简短指令配合视觉提示。",
+      "promptPreference": "提示偏好示例：先示范再逐步撤除辅助。",
+      "environmentNotes": "环境说明示例：安静、光线柔和的训练室。",
+      "currentGoalText": "当前目标示例：在熟悉场景中完成一次独立任务。",
+      "notes": "备注示例：演示数据，已脱敏。",
+      "lastAssessmentAt": "2026-10-24T14:29:10.599Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:10.583Z",
+      "updatedAt": "2026-10-24T14:29:10.652Z"
+    },
+    {
+      "id": "cmvmhw6d0001jvl70q14llv6y",
+      "code": "XS-2026-002",
+      "name": "学员02",
+      "nickname": null,
+      "ageGroup": "6-8 岁",
+      "status": "ACTIVE",
+      "traits": [
+        "喜欢结构化任务",
+        "对声音敏感"
+      ],
+      "interests": [
+        "积木",
+        "绘本"
+      ],
+      "communicationStyle": "沟通方式示例：简短指令配合视觉提示。",
+      "promptPreference": "提示偏好示例：先示范再逐步撤除辅助。",
+      "environmentNotes": "环境说明示例：安静、光线柔和的训练室。",
+      "currentGoalText": "当前目标示例：在熟悉场景中完成一次独立任务。",
+      "notes": "备注示例：演示数据，已脱敏。",
+      "lastAssessmentAt": "2026-10-24T14:29:33.115Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:33.109Z",
+      "updatedAt": "2026-10-24T14:29:33.142Z"
+    },
+    {
+      "id": "cmvmhwmq60007vl90dv52xv2b",
+      "code": "XS-2026-003",
+      "name": "学员03",
+      "nickname": null,
+      "ageGroup": "6-8 岁",
+      "status": "ACTIVE",
+      "traits": [
+        "喜欢结构化任务",
+        "对声音敏感"
+      ],
+      "interests": [
+        "积木",
+        "绘本"
+      ],
+      "communicationStyle": "沟通方式示例：简短指令配合视觉提示。",
+      "promptPreference": "提示偏好示例：先示范再逐步撤除辅助。",
+      "environmentNotes": "环境说明示例：安静、光线柔和的训练室。",
+      "currentGoalText": "当前目标示例：在熟悉场景中完成一次独立任务。",
+      "notes": "备注示例：演示数据，已脱敏。",
+      "lastAssessmentAt": "2026-10-24T14:29:54.329Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:54.319Z",
+      "updatedAt": "2026-10-24T14:29:54.407Z"
+    },
+    {
+      "id": "cmvmi2og20003vlos1k7yikz6",
+      "code": "XS-2026-004",
+      "name": "学员04",
+      "nickname": null,
+      "ageGroup": "6-8 岁",
+      "status": "ACTIVE",
+      "traits": [
+        "喜欢结构化任务"
+      ],
+      "interests": [
+        "绘本"
+      ],
+      "communicationStyle": "沟通方式示例：简短指令配合视觉提示。",
+      "promptPreference": "提示偏好示例：先示范再逐步撤除辅助。",
+      "environmentNotes": "环境说明示例：安静、光线柔和的训练室。",
+      "currentGoalText": "当前目标示例：在熟悉场景中完成一次独立任务。",
+      "notes": "备注示例：演示数据，已脱敏。",
+      "lastAssessmentAt": "2026-10-24T14:35:19.386Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:34:36.482Z",
+      "updatedAt": "2026-10-24T14:35:53.749Z"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "cmvmhvozr0009vl70lcwv3oaz",
+      "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+      "author": "训练指导",
+      "scores": {
+        "social": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "social desc",
+          "observation": "观察记录"
+        },
+        "emotion": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "emotion desc",
+          "observation": "观察记录"
+        },
+        "learning": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "learning desc",
+          "observation": "观察记录"
+        },
+        "attention": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "attention desc",
+          "observation": "观察记录"
+        },
+        "cognition": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "cognition desc",
+          "observation": "观察记录"
+        },
+        "adaptation": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "adaptation desc",
+          "observation": "观察记录"
+        },
+        "dailyLiving": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "dailyLiving desc",
+          "observation": "观察记录"
+        },
+        "communication": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "communication desc",
+          "observation": "观察记录"
+        }
+      },
+      "generalNotes": "评估说明示例：演示数据，已脱敏。",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:10.599Z"
+    },
+    {
+      "id": "cmvmhw6d7001nvl7048z9xgim",
+      "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+      "author": "训练指导",
+      "scores": {
+        "social": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "social desc",
+          "observation": "观察记录"
+        },
+        "emotion": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "emotion desc",
+          "observation": "观察记录"
+        },
+        "learning": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "learning desc",
+          "observation": "观察记录"
+        },
+        "attention": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "attention desc",
+          "observation": "观察记录"
+        },
+        "cognition": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "cognition desc",
+          "observation": "观察记录"
+        },
+        "adaptation": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "adaptation desc",
+          "observation": "观察记录"
+        },
+        "dailyLiving": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "dailyLiving desc",
+          "observation": "观察记录"
+        },
+        "communication": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "communication desc",
+          "observation": "观察记录"
+        }
+      },
+      "generalNotes": "评估说明示例：演示数据，已脱敏。",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:33.115Z"
+    },
+    {
+      "id": "cmvmhwmqg000bvl90nfzm1k8c",
+      "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+      "author": "训练指导",
+      "scores": {
+        "social": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "social desc",
+          "observation": "观察记录"
+        },
+        "emotion": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "emotion desc",
+          "observation": "观察记录"
+        },
+        "learning": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "learning desc",
+          "observation": "观察记录"
+        },
+        "attention": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "attention desc",
+          "observation": "观察记录"
+        },
+        "cognition": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "cognition desc",
+          "observation": "观察记录"
+        },
+        "adaptation": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "adaptation desc",
+          "observation": "观察记录"
+        },
+        "dailyLiving": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "dailyLiving desc",
+          "observation": "观察记录"
+        },
+        "communication": {
+          "score": 3,
+          "concerns": "需要提示",
+          "strengths": "愿意尝试",
+          "description": "communication desc",
+          "observation": "观察记录"
+        }
+      },
+      "generalNotes": "评估说明示例：演示数据，已脱敏。",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:54.329Z"
+    },
+    {
+      "id": "cmvmi3lju0007vlos7q57y3l0",
+      "learnerId": "cmvmi2og20003vlos1k7yikz6",
+      "author": "演示账号 · 训练指导",
+      "scores": {
+        "social": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "emotion": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "learning": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "attention": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "cognition": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "adaptation": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "dailyLiving": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        },
+        "communication": {
+          "score": 3,
+          "concerns": "",
+          "strengths": "",
+          "description": "",
+          "observation": ""
+        }
+      },
+      "generalNotes": "评估说明示例：演示数据，已脱敏。",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:35:19.386Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "cmvmhvp06000dvl700xrrmc9j",
+      "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+      "assessmentId": "cmvmhvozr0009vl70lcwv3oaz",
+      "status": "CONFIRMED",
+      "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+      "strengths": [
+        "愿意尝试",
+        "对积木、绘本等活动有兴趣，可作为练习切入点"
+      ],
+      "developmentAreas": [
+        "需要提示"
+      ],
+      "recommendations": [
+        "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+        "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+        "提示方式建议：视觉提示卡",
+        "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+      ],
+      "dimensionInsights": {
+        "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+        "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+        "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+        "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+        "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+        "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+        "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+        "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+      },
+      "observationSnapshot": "观察记录示例：演示数据，已脱敏。",
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:29:10.634Z",
+      "createdAt": "2026-10-24T14:29:10.614Z",
+      "updatedAt": "2026-10-24T14:29:10.635Z"
+    },
+    {
+      "id": "cmvmhw6df001rvl704oyrsgh8",
+      "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+      "assessmentId": "cmvmhw6d7001nvl7048z9xgim",
+      "status": "CONFIRMED",
+      "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+      "strengths": [
+        "愿意尝试",
+        "对积木、绘本等活动有兴趣，可作为练习切入点"
+      ],
+      "developmentAreas": [
+        "需要提示"
+      ],
+      "recommendations": [
+        "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+        "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+        "提示方式建议：视觉提示卡",
+        "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+      ],
+      "dimensionInsights": {
+        "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+        "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+        "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+        "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+        "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+        "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+        "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+        "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+      },
+      "observationSnapshot": "观察记录示例：演示数据，已脱敏。",
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:29:33.132Z",
+      "createdAt": "2026-10-24T14:29:33.123Z",
+      "updatedAt": "2026-10-24T14:29:33.133Z"
+    },
+    {
+      "id": "cmvmhwmqu000fvl90lahx2yfq",
+      "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+      "assessmentId": "cmvmhwmqg000bvl90nfzm1k8c",
+      "status": "CONFIRMED",
+      "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+      "strengths": [
+        "愿意尝试",
+        "对积木、绘本等活动有兴趣，可作为练习切入点"
+      ],
+      "developmentAreas": [
+        "需要提示"
+      ],
+      "recommendations": [
+        "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+        "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+        "提示方式建议：视觉提示卡",
+        "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+      ],
+      "dimensionInsights": {
+        "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+        "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+        "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+        "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+        "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+        "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+        "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+        "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+      },
+      "observationSnapshot": "观察记录示例：演示数据，已脱敏。",
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:29:54.390Z",
+      "createdAt": "2026-10-24T14:29:54.343Z",
+      "updatedAt": "2026-10-24T14:29:54.391Z"
+    },
+    {
+      "id": "cmvmi3ot5000bvlosbl82r6ma",
+      "learnerId": "cmvmi2og20003vlos1k7yikz6",
+      "assessmentId": "cmvmi3lju0007vlos7q57y3l0",
+      "status": "CONFIRMED",
+      "summary": "从本次能力信息与补充观察看，学员04在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+      "strengths": [
+        "对绘本等活动有兴趣，可作为练习切入点"
+      ],
+      "developmentAreas": [],
+      "recommendations": [
+        "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+        "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+        "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+      ],
+      "dimensionInsights": {
+        "social": "该维度在提示与结构化支持下基本可以完成。",
+        "emotion": "该维度在提示与结构化支持下基本可以完成。",
+        "learning": "该维度在提示与结构化支持下基本可以完成。",
+        "attention": "该维度在提示与结构化支持下基本可以完成。",
+        "cognition": "该维度在提示与结构化支持下基本可以完成。",
+        "adaptation": "该维度在提示与结构化支持下基本可以完成。",
+        "dailyLiving": "该维度在提示与结构化支持下基本可以完成。",
+        "communication": "该维度在提示与结构化支持下基本可以完成。"
+      },
+      "observationSnapshot": "观察记录示例：演示数据，已脱敏。",
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:35:37.421Z",
+      "createdAt": "2026-10-24T14:35:23.609Z",
+      "updatedAt": "2026-10-24T14:35:37.423Z"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "cmvmhvp0g000fvl70koxacfbg",
+      "profileId": "cmvmhvp06000dvl700xrrmc9j",
+      "revision": 1,
+      "action": "generated",
+      "snapshot": {
+        "id": "cmvmhvp06000dvl700xrrmc9j",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:29:10.614Z",
+        "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+        "strengths": [
+          "愿意尝试",
+          "对积木、绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:29:10.614Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmhvozr0009vl70lcwv3oaz",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "提示方式建议：视觉提示卡",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [
+          "需要提示"
+        ],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+          "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+          "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+          "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+        },
+        "observationSnapshot": "联调补充"
+      },
+      "note": "首次生成",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:10.624Z"
+    },
+    {
+      "id": "cmvmhvp0p000jvl70v6zgbs4x",
+      "profileId": "cmvmhvp06000dvl700xrrmc9j",
+      "revision": 2,
+      "action": "confirmed",
+      "snapshot": {
+        "id": "cmvmhvp06000dvl700xrrmc9j",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:29:10.614Z",
+        "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+        "strengths": [
+          "愿意尝试",
+          "对积木、绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:29:10.614Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmhvozr0009vl70lcwv3oaz",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "提示方式建议：视觉提示卡",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [
+          "需要提示"
+        ],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+          "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+          "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+          "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+        },
+        "observationSnapshot": "联调补充"
+      },
+      "note": "确认前快照",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:10.634Z"
+    },
+    {
+      "id": "cmvmhw6dh001tvl70575luyg2",
+      "profileId": "cmvmhw6df001rvl704oyrsgh8",
+      "revision": 1,
+      "action": "generated",
+      "snapshot": {
+        "id": "cmvmhw6df001rvl704oyrsgh8",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:29:33.123Z",
+        "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+        "strengths": [
+          "愿意尝试",
+          "对积木、绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:29:33.123Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmhw6d7001nvl7048z9xgim",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "提示方式建议：视觉提示卡",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [
+          "需要提示"
+        ],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+          "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+          "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+          "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+        },
+        "observationSnapshot": "联调补充"
+      },
+      "note": "首次生成",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:33.125Z"
+    },
+    {
+      "id": "cmvmhw6do001xvl70i5r8xc4a",
+      "profileId": "cmvmhw6df001rvl704oyrsgh8",
+      "revision": 2,
+      "action": "confirmed",
+      "snapshot": {
+        "id": "cmvmhw6df001rvl704oyrsgh8",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:29:33.123Z",
+        "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+        "strengths": [
+          "愿意尝试",
+          "对积木、绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:29:33.123Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmhw6d7001nvl7048z9xgim",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "提示方式建议：视觉提示卡",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [
+          "需要提示"
+        ],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+          "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+          "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+          "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+        },
+        "observationSnapshot": "联调补充"
+      },
+      "note": "确认前快照",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:33.132Z"
+    },
+    {
+      "id": "cmvmhwmr8000hvl90rxnhbawv",
+      "profileId": "cmvmhwmqu000fvl90lahx2yfq",
+      "revision": 1,
+      "action": "generated",
+      "snapshot": {
+        "id": "cmvmhwmqu000fvl90lahx2yfq",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:29:54.343Z",
+        "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+        "strengths": [
+          "愿意尝试",
+          "对积木、绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:29:54.343Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmhwmqg000bvl90nfzm1k8c",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "提示方式建议：视觉提示卡",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [
+          "需要提示"
+        ],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+          "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+          "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+          "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+        },
+        "observationSnapshot": "联调补充"
+      },
+      "note": "首次生成",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:54.356Z"
+    },
+    {
+      "id": "cmvmhwmrv000lvl909sqyj3f1",
+      "profileId": "cmvmhwmqu000fvl90lahx2yfq",
+      "revision": 2,
+      "action": "confirmed",
+      "snapshot": {
+        "id": "cmvmhwmqu000fvl90lahx2yfq",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员01在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务、对声音敏感”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:29:54.343Z",
+        "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+        "strengths": [
+          "愿意尝试",
+          "对积木、绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:29:54.343Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmhwmqg000bvl90nfzm1k8c",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "提示方式建议：视觉提示卡",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [
+          "需要提示"
+        ],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。social desc",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。emotion desc",
+          "learning": "该维度在提示与结构化支持下基本可以完成。learning desc",
+          "attention": "该维度在提示与结构化支持下基本可以完成。attention desc",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。cognition desc",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。adaptation desc",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。dailyLiving desc",
+          "communication": "该维度在提示与结构化支持下基本可以完成。communication desc"
+        },
+        "observationSnapshot": "联调补充"
+      },
+      "note": "确认前快照",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:54.380Z"
+    },
+    {
+      "id": "cmvmi3otj000dvlos3lpovde4",
+      "profileId": "cmvmi3ot5000bvlosbl82r6ma",
+      "revision": 1,
+      "action": "generated",
+      "snapshot": {
+        "id": "cmvmi3ot5000bvlosbl82r6ma",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员04在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:35:23.609Z",
+        "learnerId": "cmvmi2og20003vlos1k7yikz6",
+        "strengths": [
+          "对绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:35:23.609Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmi3lju0007vlos7q57y3l0",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。",
+          "learning": "该维度在提示与结构化支持下基本可以完成。",
+          "attention": "该维度在提示与结构化支持下基本可以完成。",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。",
+          "communication": "该维度在提示与结构化支持下基本可以完成。"
+        },
+        "observationSnapshot": "本次分析基于能力信息录入记录生成，可作为进一步观察的参考。"
+      },
+      "note": "首次生成",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:35:23.623Z"
+    },
+    {
+      "id": "cmvmi3zgs000hvlosjpjj5mcc",
+      "profileId": "cmvmi3ot5000bvlosbl82r6ma",
+      "revision": 2,
+      "action": "confirmed",
+      "snapshot": {
+        "id": "cmvmi3ot5000bvlosbl82r6ma",
+        "isDemo": true,
+        "status": "UNCONFIRMED",
+        "summary": "从本次能力信息与补充观察看，学员04在语言与沟通能力、社交互动能力方面表现相对稳定，语言与沟通能力、社交互动能力仍有进一步练习空间。结合“喜欢结构化任务”等个人特点，建议先从结构清晰、干扰较少的情境开始练习，并将本结果作为辅助参考，经使用者确认后再用于训练方案。",
+        "createdAt": "2026-10-24T14:35:23.609Z",
+        "learnerId": "cmvmi2og20003vlos1k7yikz6",
+        "strengths": [
+          "对绘本等活动有兴趣，可作为练习切入点"
+        ],
+        "updatedAt": "2026-10-24T14:35:23.609Z",
+        "confirmedAt": null,
+        "createdById": null,
+        "generatedBy": "mock",
+        "assessmentId": "cmvmi3lju0007vlos7q57y3l0",
+        "confirmedById": null,
+        "recommendations": [
+          "从 3–5 秒等待与简短句式提示开始，鼓励在熟悉情境中主动表达。",
+          "先安排两人一组的结构化互动，再逐步增加同伴数量与轮次。",
+          "记录每次练习中的提示次数与回应方式，按周回顾变化。"
+        ],
+        "developmentAreas": [],
+        "dimensionInsights": {
+          "social": "该维度在提示与结构化支持下基本可以完成。",
+          "emotion": "该维度在提示与结构化支持下基本可以完成。",
+          "learning": "该维度在提示与结构化支持下基本可以完成。",
+          "attention": "该维度在提示与结构化支持下基本可以完成。",
+          "cognition": "该维度在提示与结构化支持下基本可以完成。",
+          "adaptation": "该维度在提示与结构化支持下基本可以完成。",
+          "dailyLiving": "该维度在提示与结构化支持下基本可以完成。",
+          "communication": "该维度在提示与结构化支持下基本可以完成。"
+        },
+        "observationSnapshot": "本次分析基于能力信息录入记录生成，可作为进一步观察的参考。"
+      },
+      "note": "确认前快照",
+      "createdById": null,
+      "createdAt": "2026-10-24T14:35:37.420Z"
+    }
+  ],
+  "goals": [
+    {
+      "id": "cmvmhvp12000nvl70wqmqdw8b",
+      "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+      "profileId": "cmvmhvp06000dvl700xrrmc9j",
+      "title": "在课堂中主动请求帮助",
+      "category": "沟通表达",
+      "description": "练习用短句请求帮助",
+      "successCriteria": "一次活动中主动请求 1 次",
+      "relatedDimensions": [
+        "communication",
+        "social"
+      ],
+      "priority": "HIGH",
+      "status": "PLANNING",
+      "targetDate": "2026-12-31T00:00:00.000Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:10.646Z",
+      "updatedAt": "2026-10-24T14:29:10.646Z"
+    },
+    {
+      "id": "cmvmhw6dx0021vl702hlu55e1",
+      "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+      "profileId": "cmvmhw6df001rvl704oyrsgh8",
+      "title": "在课堂中主动请求帮助",
+      "category": "沟通表达",
+      "description": "练习用短句请求帮助",
+      "successCriteria": "一次活动中主动请求 1 次",
+      "relatedDimensions": [
+        "communication",
+        "social"
+      ],
+      "priority": "HIGH",
+      "status": "PLANNING",
+      "targetDate": "2026-12-31T00:00:00.000Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:33.141Z",
+      "updatedAt": "2026-10-24T14:29:33.141Z"
+    },
+    {
+      "id": "cmvmhwmsj000pvl90zccj8dg9",
+      "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+      "profileId": "cmvmhwmqu000fvl90lahx2yfq",
+      "title": "在课堂中主动请求帮助",
+      "category": "沟通表达",
+      "description": "练习用短句请求帮助",
+      "successCriteria": "一次活动中主动请求 1 次",
+      "relatedDimensions": [
+        "communication",
+        "social"
+      ],
+      "priority": "HIGH",
+      "status": "PLANNING",
+      "targetDate": "2026-12-31T00:00:00.000Z",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:54.403Z",
+      "updatedAt": "2026-10-24T14:29:54.403Z"
+    },
+    {
+      "id": "cmvmi4c2a000lvlosveqavuml",
+      "learnerId": "cmvmi2og20003vlos1k7yikz6",
+      "profileId": "cmvmi3ot5000bvlosbl82r6ma",
+      "title": "在课堂中主动请求帮助",
+      "category": "沟通表达",
+      "description": "在课堂练习中遇到困难时，用短句向教师请求帮助。",
+      "successCriteria": "一次课堂活动中主动请求帮助至少 1 次。",
+      "relatedDimensions": [],
+      "priority": "MEDIUM",
+      "status": "PLANNING",
+      "targetDate": null,
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:35:53.746Z",
+      "updatedAt": "2026-10-24T14:35:53.746Z"
+    }
+  ],
+  "scripts": [
+    {
+      "id": "cmvmhvp1n000rvl708cwekxui",
+      "code": "JB-2026-001",
+      "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+      "goalId": "cmvmhvp12000nvl70wqmqdw8b",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“课堂请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "status": "CONFIRMED",
+      "version": 1,
+      "preparation": [
+        "提前向学员展示本次流程与训练目标：在课堂中主动请求帮助",
+        "检查场景中的关键对象、提示材料与角色位置",
+        "预留约 20 分钟训练时间，并安排结束后的过渡时间"
+      ],
+      "environmentElements": [
+        "独立课桌",
+        "黑板",
+        "流程卡",
+        "材料托盘"
+      ],
+      "steps": [
+        {
+          "id": "step_bc516d73-8c6a-4f53-8b92-926656c8e2df",
+          "title": "进入情境",
+          "prompt": "“学员01，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "提示次数",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_6e617c67-0cd7-4b20-968e-c12df1603420",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "举手示意",
+          "observationPoints": [
+            "提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_ad8a816f-2f0c-42ac-adfa-86ee5ff90c31",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员01的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_51531f0d-142d-4223-b5f6-b14e28be088a",
+          "title": "回顾与结束",
+          "prompt": "“学员01，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "sceneAdaptation": "小学课堂内保持减少视觉干扰，主要对象围绕训练步骤布置。避免出现突发噪音。建议训练时长控制在 20 分钟左右。",
+      "cautions": [
+        "避免出现突发噪音等干扰元素",
+        "当学员出现明显不适或持续回避时，暂停练习并给予缓冲时间",
+        "提示语保持简短，一次只呈现一个步骤"
+      ],
+      "sceneConfig": {
+        "theme": "课堂请求帮助",
+        "duration": 20,
+        "sceneType": "小学课堂",
+        "stepCount": 4,
+        "complexity": "适中",
+        "promptStyle": "视觉提示卡",
+        "avoidElements": [
+          "突发噪音"
+        ],
+        "environmentPrefs": [
+          "减少视觉干扰"
+        ]
+      },
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:29:10.693Z",
+      "archivedAt": null,
+      "createdAt": "2026-10-24T14:29:10.667Z",
+      "updatedAt": "2026-10-24T14:29:10.694Z"
+    },
+    {
+      "id": "cmvmhw6e60025vl70d2lcj2qm",
+      "code": "JB-2026-002",
+      "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+      "goalId": "cmvmhw6dx0021vl702hlu55e1",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“课堂请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "status": "CONFIRMED",
+      "version": 1,
+      "preparation": [
+        "提前向学员展示本次流程与训练目标：在课堂中主动请求帮助",
+        "检查场景中的关键对象、提示材料与角色位置",
+        "预留约 20 分钟训练时间，并安排结束后的过渡时间"
+      ],
+      "environmentElements": [
+        "独立课桌",
+        "黑板",
+        "流程卡",
+        "材料托盘"
+      ],
+      "steps": [
+        {
+          "id": "step_62dc035f-923c-4d5e-b6c1-a71cb25b64c6",
+          "title": "进入情境",
+          "prompt": "“学员01，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "提示次数",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_cd50f698-fc2d-4736-b9d9-f1919de0bbfe",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "举手示意",
+          "observationPoints": [
+            "提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_dd60355c-f50c-4af6-8666-662fa486dcb7",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员01的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_1d471b91-68cf-4b15-93f1-d54f6446825d",
+          "title": "回顾与结束",
+          "prompt": "“学员01，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "sceneAdaptation": "小学课堂内保持减少视觉干扰，主要对象围绕训练步骤布置。避免出现突发噪音。建议训练时长控制在 20 分钟左右。",
+      "cautions": [
+        "避免出现突发噪音等干扰元素",
+        "当学员出现明显不适或持续回避时，暂停练习并给予缓冲时间",
+        "提示语保持简短，一次只呈现一个步骤"
+      ],
+      "sceneConfig": {
+        "theme": "课堂请求帮助",
+        "duration": 20,
+        "sceneType": "小学课堂",
+        "stepCount": 4,
+        "complexity": "适中",
+        "promptStyle": "视觉提示卡",
+        "avoidElements": [
+          "突发噪音"
+        ],
+        "environmentPrefs": [
+          "减少视觉干扰"
+        ]
+      },
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:29:33.163Z",
+      "archivedAt": null,
+      "createdAt": "2026-10-24T14:29:33.150Z",
+      "updatedAt": "2026-10-24T14:29:33.164Z"
+    },
+    {
+      "id": "cmvmhwmtn000tvl90dnl8hr8n",
+      "code": "JB-2026-003",
+      "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+      "goalId": "cmvmhwmsj000pvl90zccj8dg9",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“课堂请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "status": "CONFIRMED",
+      "version": 1,
+      "preparation": [
+        "提前向学员展示本次流程与训练目标：在课堂中主动请求帮助",
+        "检查场景中的关键对象、提示材料与角色位置",
+        "预留约 20 分钟训练时间，并安排结束后的过渡时间"
+      ],
+      "environmentElements": [
+        "独立课桌",
+        "黑板",
+        "流程卡",
+        "材料托盘"
+      ],
+      "steps": [
+        {
+          "id": "step_23096958-39de-4231-ad4a-b1fead7560ef",
+          "title": "进入情境",
+          "prompt": "“学员01，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "提示次数",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_a23c05ec-0163-479c-b5a3-3b9baff0c5be",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "举手示意",
+          "observationPoints": [
+            "提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_6afd0089-975d-4cc1-9df5-a1fba06cee79",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员01的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_2de08c8b-3807-471c-9741-742ea5e2f635",
+          "title": "回顾与结束",
+          "prompt": "“学员01，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "sceneAdaptation": "小学课堂内保持减少视觉干扰，主要对象围绕训练步骤布置。避免出现突发噪音。建议训练时长控制在 20 分钟左右。",
+      "cautions": [
+        "避免出现突发噪音等干扰元素",
+        "当学员出现明显不适或持续回避时，暂停练习并给予缓冲时间",
+        "提示语保持简短，一次只呈现一个步骤"
+      ],
+      "sceneConfig": {
+        "theme": "课堂请求帮助",
+        "duration": 20,
+        "sceneType": "小学课堂",
+        "stepCount": 4,
+        "complexity": "适中",
+        "promptStyle": "视觉提示卡",
+        "avoidElements": [
+          "突发噪音"
+        ],
+        "environmentPrefs": [
+          "减少视觉干扰"
+        ]
+      },
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:29:54.480Z",
+      "archivedAt": null,
+      "createdAt": "2026-10-24T14:29:54.443Z",
+      "updatedAt": "2026-10-24T14:29:54.481Z"
+    },
+    {
+      "id": "cmvmi4uus000pvlosjq4rh728",
+      "code": "JB-2026-004",
+      "learnerId": "cmvmi2og20003vlos1k7yikz6",
+      "goalId": "cmvmi4c2a000lvlosveqavuml",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“在课堂中主动请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "status": "CONFIRMED",
+      "version": 1,
+      "preparation": [
+        "提前向学员展示本次流程与训练目标：在课堂中主动请求帮助",
+        "检查场景中的关键对象、提示材料与角色位置",
+        "预留约 15 分钟训练时间，并安排结束后的过渡时间"
+      ],
+      "environmentElements": [
+        "独立课桌",
+        "黑板",
+        "流程卡",
+        "材料托盘"
+      ],
+      "steps": [
+        {
+          "id": "step_1df7866b-5443-4119-957c-be3342be4ee3",
+          "title": "进入情境",
+          "prompt": "“学员04，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成当前步骤，并在 5 秒内回应提示",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "参与度与停留时间",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_d95ad8b6-2be9-4d32-a0e4-edc6e9a3de73",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次目标行为的尝试",
+          "expectedBehavior": "在提示下举手并用短句请求帮助。",
+          "observationPoints": [
+            "需要的提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_f8f6c632-2d78-464e-b98c-b6463f4b86a2",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员04的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_6374cff0-066c-4b18-af81-ad83fb194f21",
+          "title": "回顾与结束",
+          "prompt": "“学员04，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "sceneAdaptation": "小学课堂内保持减少视觉干扰，主要对象围绕训练步骤布置。避免无关装饰与突发噪音。建议训练时长控制在 15 分钟左右。",
+      "cautions": [
+        "避免无关装饰与突发噪音",
+        "当学员出现明显不适或持续回避时，暂停练习并给予缓冲时间",
+        "提示语保持简短，一次只呈现一个步骤"
+      ],
+      "sceneConfig": {
+        "theme": "在课堂中主动请求帮助",
+        "duration": 15,
+        "sceneType": "小学课堂",
+        "stepCount": 4,
+        "complexity": "适中",
+        "promptStyle": "视觉提示卡",
+        "avoidElements": [],
+        "environmentPrefs": [
+          "减少视觉干扰"
+        ]
+      },
+      "generatedBy": "mock",
+      "isDemo": true,
+      "createdById": null,
+      "confirmedById": null,
+      "confirmedAt": "2026-10-24T14:36:32.035Z",
+      "archivedAt": null,
+      "createdAt": "2026-10-24T14:36:18.100Z",
+      "updatedAt": "2026-10-24T14:36:32.037Z"
+    }
+  ],
+  "scriptVersions": [
+    {
+      "id": "cmvmhvp1t000tvl70vwqhhaqo",
+      "scriptId": "cmvmhvp1n000rvl708cwekxui",
+      "version": 1,
+      "savedAt": "2026-10-24T14:29:10.673Z",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“课堂请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "steps": [
+        {
+          "id": "step_bc516d73-8c6a-4f53-8b92-926656c8e2df",
+          "title": "进入情境",
+          "prompt": "“学员01，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "提示次数",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_6e617c67-0cd7-4b20-968e-c12df1603420",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "举手示意",
+          "observationPoints": [
+            "提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_ad8a816f-2f0c-42ac-adfa-86ee5ff90c31",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员01的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_51531f0d-142d-4223-b5f6-b14e28be088a",
+          "title": "回顾与结束",
+          "prompt": "“学员01，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "note": "首次生成",
+      "createdById": null
+    },
+    {
+      "id": "cmvmhw6e70027vl70a9r14029",
+      "scriptId": "cmvmhw6e60025vl70d2lcj2qm",
+      "version": 1,
+      "savedAt": "2026-10-24T14:29:33.152Z",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“课堂请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "steps": [
+        {
+          "id": "step_62dc035f-923c-4d5e-b6c1-a71cb25b64c6",
+          "title": "进入情境",
+          "prompt": "“学员01，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "提示次数",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_cd50f698-fc2d-4736-b9d9-f1919de0bbfe",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "举手示意",
+          "observationPoints": [
+            "提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_dd60355c-f50c-4af6-8666-662fa486dcb7",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员01的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_1d471b91-68cf-4b15-93f1-d54f6446825d",
+          "title": "回顾与结束",
+          "prompt": "“学员01，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "note": "首次生成",
+      "createdById": null
+    },
+    {
+      "id": "cmvmhwmtt000vvl906i9ev7hc",
+      "scriptId": "cmvmhwmtn000tvl90dnl8hr8n",
+      "version": 1,
+      "savedAt": "2026-10-24T14:29:54.449Z",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“课堂请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "steps": [
+        {
+          "id": "step_23096958-39de-4231-ad4a-b1fead7560ef",
+          "title": "进入情境",
+          "prompt": "“学员01，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "提示次数",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_a23c05ec-0163-479c-b5a3-3b9baff0c5be",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次请求",
+          "expectedBehavior": "举手示意",
+          "observationPoints": [
+            "提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_6afd0089-975d-4cc1-9df5-a1fba06cee79",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员01的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_2de08c8b-3807-471c-9741-742ea5e2f635",
+          "title": "回顾与结束",
+          "prompt": "“学员01，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "note": "首次生成",
+      "createdById": null
+    },
+    {
+      "id": "cmvmi4uux000rvlos0y0u0bvx",
+      "scriptId": "cmvmi4uus000pvlosjq4rh728",
+      "version": 1,
+      "savedAt": "2026-10-24T14:36:18.106Z",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境",
+      "objective": "在小学课堂情境中，围绕“在课堂中主动请求帮助”完成 4 个连续步骤的练习。",
+      "scenarioSummary": "以“在课堂中主动请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。",
+      "steps": [
+        {
+          "id": "step_1df7866b-5443-4119-957c-be3342be4ee3",
+          "title": "进入情境",
+          "prompt": "“学员04，我们今天在这个场景里练习在课堂中主动请求帮助。先看看周围有什么。”",
+          "trigger": "学员进入场景并安定下来后",
+          "completion": "完成当前步骤，并在 5 秒内回应提示",
+          "expectedBehavior": "学员观察场景并保持停留，愿意跟随引导",
+          "observationPoints": [
+            "参与度与停留时间",
+            "进入场景的表现"
+          ]
+        },
+        {
+          "id": "step_d95ad8b6-2be9-4d32-a0e4-edc6e9a3de73",
+          "title": "引导练习",
+          "prompt": "出示第 2 步提示卡，并指向当前需要关注的位置。",
+          "trigger": "学员进入情境并安定后",
+          "completion": "完成一次目标行为的尝试",
+          "expectedBehavior": "在提示下举手并用短句请求帮助。",
+          "observationPoints": [
+            "需要的提示次数",
+            "目标行为出现的次数"
+          ]
+        },
+        {
+          "id": "step_f8f6c632-2d78-464e-b98c-b6463f4b86a2",
+          "title": "等待与提示",
+          "prompt": "等待 3–5 秒，观察学员04的反应；如未回应，再用简短语句提示当前步骤。",
+          "trigger": "学员出现尝试动作或表达意愿后",
+          "completion": "完成一次 3–5 秒的等待并回应提示",
+          "expectedBehavior": "在等待时间内保持当前活动，并在提示后开始下一步",
+          "observationPoints": [
+            "等待时长",
+            "提示次数与回应方式"
+          ]
+        },
+        {
+          "id": "step_6374cff0-066c-4b18-af81-ad83fb194f21",
+          "title": "回顾与结束",
+          "prompt": "“学员04，今天我们练习了在课堂中主动请求帮助。你觉得自己做到了哪一步？”",
+          "trigger": "完成前一步练习后",
+          "completion": "完成一次简单回顾并指出完成的步骤",
+          "expectedBehavior": "与教师一起回顾流程，指出至少一个完成的步骤",
+          "observationPoints": [
+            "回顾时的参与度",
+            "能否指出完成的步骤"
+          ]
+        }
+      ],
+      "note": "首次生成",
+      "createdById": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "cmvmhvp2o000zvl70tzcovl52",
+      "code": "RW-2026-001",
+      "sourceType": "SCRIPT",
+      "sceneName": "课堂请求帮助场景",
+      "scenePurpose": "练习请求帮助",
+      "prompt": "在小学课堂中练习主动请求帮助",
+      "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+      "trainingGoalId": "cmvmhvp12000nvl70wqmqdw8b",
+      "scriptId": "cmvmhvp1n000rvl708cwekxui",
+      "imageReferences": [],
+      "sceneConfig": {
+        "sceneType": "小学课堂",
+        "characters": "",
+        "complexity": "适中",
+        "keyElements": [],
+        "visualStyle": [],
+        "sensoryPrefs": [],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmhvp2o000zvl70tzcovl52:siwzzo"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmhvp2o000zvl70tzcovl52",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:10.704Z",
+      "updatedAt": "2026-10-24T14:29:15.992Z",
+      "submittedAt": "2026-10-24T14:29:10.703Z",
+      "completedAt": "2026-10-24T14:29:15.991Z"
+    },
+    {
+      "id": "cmvmhvthr0019vl70v04a8lq3",
+      "code": "RW-2026-002",
+      "sourceType": "IMAGE",
+      "sceneName": "图像参考场景",
+      "scenePurpose": "上传图片联调",
+      "prompt": "根据参考图生成",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "imageReferences": [
+        {
+          "id": "cmvmhvth20017vl70ah5og2zg",
+          "name": "reference.png",
+          "size": 70,
+          "type": "image/png"
+        }
+      ],
+      "sceneConfig": {
+        "sceneType": "家庭客厅",
+        "characters": "",
+        "complexity": "适中",
+        "keyElements": [],
+        "visualStyle": [],
+        "sensoryPrefs": [],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmhvthr0019vl70v04a8lq3:hxv365"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmhvthr0019vl70v04a8lq3",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:16.432Z",
+      "updatedAt": "2026-10-24T14:29:21.630Z",
+      "submittedAt": "2026-10-24T14:29:16.431Z",
+      "completedAt": "2026-10-24T14:29:21.629Z"
+    },
+    {
+      "id": "cmvmhw6et002dvl70v8aa9zyj",
+      "code": "RW-2026-003",
+      "sourceType": "SCRIPT",
+      "sceneName": "课堂请求帮助场景",
+      "scenePurpose": "练习请求帮助",
+      "prompt": "在小学课堂中练习主动请求帮助",
+      "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+      "trainingGoalId": "cmvmhw6dx0021vl702hlu55e1",
+      "scriptId": "cmvmhw6e60025vl70d2lcj2qm",
+      "imageReferences": [],
+      "sceneConfig": {
+        "sceneType": "小学课堂",
+        "characters": "",
+        "complexity": "适中",
+        "keyElements": [],
+        "visualStyle": [],
+        "sensoryPrefs": [],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmhw6et002dvl70v8aa9zyj:4rofyy"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmhw6et002dvl70v8aa9zyj",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:33.174Z",
+      "updatedAt": "2026-10-24T14:29:38.539Z",
+      "submittedAt": "2026-10-24T14:29:33.173Z",
+      "completedAt": "2026-10-24T14:29:38.538Z"
+    },
+    {
+      "id": "cmvmhwat7002nvl705hrjkzak",
+      "code": "RW-2026-004",
+      "sourceType": "IMAGE",
+      "sceneName": "图像参考场景",
+      "scenePurpose": "上传图片联调",
+      "prompt": "根据参考图生成",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "imageReferences": [
+        {
+          "id": "cmvmhwasp002lvl70w7lymw1n",
+          "name": "reference.png",
+          "size": 70,
+          "type": "image/png"
+        }
+      ],
+      "sceneConfig": {
+        "sceneType": "家庭客厅",
+        "characters": "",
+        "complexity": "适中",
+        "keyElements": [],
+        "visualStyle": [],
+        "sensoryPrefs": [],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmhwat7002nvl705hrjkzak:85tnt9"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmhwat7002nvl705hrjkzak",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:38.876Z",
+      "updatedAt": "2026-10-24T14:29:50.886Z",
+      "submittedAt": "2026-10-24T14:29:38.875Z",
+      "completedAt": "2026-10-24T14:29:50.882Z"
+    },
+    {
+      "id": "cmvmhwmv10011vl90i3q7s64u",
+      "code": "RW-2026-005",
+      "sourceType": "SCRIPT",
+      "sceneName": "课堂请求帮助场景",
+      "scenePurpose": "练习请求帮助",
+      "prompt": "在小学课堂中练习主动请求帮助",
+      "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+      "trainingGoalId": "cmvmhwmsj000pvl90zccj8dg9",
+      "scriptId": "cmvmhwmtn000tvl90dnl8hr8n",
+      "imageReferences": [],
+      "sceneConfig": {
+        "sceneType": "小学课堂",
+        "characters": "",
+        "complexity": "适中",
+        "keyElements": [],
+        "visualStyle": [],
+        "sensoryPrefs": [],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmhwmv10011vl90i3q7s64u:z6find"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmhwmv10011vl90i3q7s64u",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:54.493Z",
+      "updatedAt": "2026-10-24T14:29:59.740Z",
+      "submittedAt": "2026-10-24T14:29:54.492Z",
+      "completedAt": "2026-10-24T14:29:59.739Z"
+    },
+    {
+      "id": "cmvmhwr9s001bvl90niy5v1oy",
+      "code": "RW-2026-006",
+      "sourceType": "IMAGE",
+      "sceneName": "图像参考场景",
+      "scenePurpose": "上传图片联调",
+      "prompt": "根据参考图生成",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "imageReferences": [
+        {
+          "id": "cmvmhwr980019vl905ua0tkl9",
+          "name": "reference.png",
+          "size": 70,
+          "type": "image/png"
+        }
+      ],
+      "sceneConfig": {
+        "sceneType": "家庭客厅",
+        "characters": "",
+        "complexity": "适中",
+        "keyElements": [],
+        "visualStyle": [],
+        "sensoryPrefs": [],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmhwr9s001bvl90niy5v1oy:pqark6"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmhwr9s001bvl90niy5v1oy",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:30:00.209Z",
+      "updatedAt": "2026-10-24T14:30:05.380Z",
+      "submittedAt": "2026-10-24T14:30:00.207Z",
+      "completedAt": "2026-10-24T14:30:05.378Z"
+    },
+    {
+      "id": "cmvmi5i14000xvlosgnimh2iv",
+      "code": "RW-2026-007",
+      "sourceType": "SCRIPT",
+      "sceneName": "在课堂中主动请求帮助 · 小学课堂情境 · 3D 场景",
+      "scenePurpose": "在课堂中主动请求帮助",
+      "prompt": "根据训练脚本“在课堂中主动请求帮助 · 小学课堂情境”构建小学课堂场景。\n训练主题：在课堂中主动请求帮助\n情境说明：以“在课堂中主动请求帮助”为主题布置小学课堂，复杂程度为“适中”，空间保持减少视觉干扰，重点支持“在课堂中主动请求帮助”的练习。\n关键环境元素：独立课桌、黑板、流程卡、材料托盘",
+      "learnerId": "cmvmi2og20003vlos1k7yikz6",
+      "trainingGoalId": "cmvmi4c2a000lvlosveqavuml",
+      "scriptId": "cmvmi4uus000pvlosjq4rh728",
+      "imageReferences": [],
+      "sceneConfig": {
+        "theme": "在课堂中主动请求帮助",
+        "sceneType": "小学课堂",
+        "characters": "保留脚本中的教师与学员角色，位置与环境保持自然、简洁。",
+        "complexity": "适中",
+        "keyElements": [
+          "独立课桌",
+          "黑板",
+          "流程卡",
+          "材料托盘"
+        ],
+        "visualStyle": [
+          "自然柔和",
+          "写实风格"
+        ],
+        "sensoryPrefs": [
+          "减少视觉干扰"
+        ],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmi5i14000xvlosgnimh2iv:yd51m5"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmi5i14000xvlosgnimh2iv",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:36:48.136Z",
+      "updatedAt": "2026-10-24T14:36:52.905Z",
+      "submittedAt": "2026-10-24T14:36:48.135Z",
+      "completedAt": "2026-10-24T14:36:52.903Z"
+    },
+    {
+      "id": "cmvmi6gr60017vlos31iaw2um",
+      "code": "RW-2026-008",
+      "sourceType": "IMAGE",
+      "sceneName": "浏览器图像参考场景",
+      "scenePurpose": "",
+      "prompt": "",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "imageReferences": [
+        {
+          "id": "cmvmi698d0015vlosb0sfc5g6",
+          "name": "ui-upload.png",
+          "size": 70,
+          "type": "image/png"
+        }
+      ],
+      "sceneConfig": {
+        "sceneType": "安静休息区",
+        "characters": "",
+        "complexity": "简洁",
+        "keyElements": [],
+        "visualStyle": [
+          "自然柔和"
+        ],
+        "sensoryPrefs": [
+          "柔和自然光",
+          "安静无噪音"
+        ],
+        "avoidElements": []
+      },
+      "status": "SUCCEEDED",
+      "progress": 100,
+      "errorCode": null,
+      "errorMessage": null,
+      "result": {
+        "notes": "演示模式生成结果：由后端模拟 Provider 生成，用于展示任务持久化与结果流程，不代表真实 3D 渲染输出。",
+        "isDemo": true,
+        "resolution": "2048 × 1280",
+        "previewSeed": "demo:mock:cmvmi6gr60017vlos31iaw2um:263puy"
+      },
+      "providerMode": "mock",
+      "providerJobId": "mock:cmvmi6gr60017vlos31iaw2um",
+      "attempts": 0,
+      "isDemo": true,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:37:33.138Z",
+      "updatedAt": "2026-10-24T14:37:38.002Z",
+      "submittedAt": "2026-10-24T14:37:33.137Z",
+      "completedAt": "2026-10-24T14:37:38.000Z"
+    }
+  ],
+  "uploadFiles": [
+    {
+      "id": "cmvmhvth20017vl70ah5og2zg",
+      "originalName": "reference.png",
+      "storageName": "42250b8d-ce4a-4d9d-955b-b269b093ec4c.png",
+      "mimeType": "image/png",
+      "size": 70,
+      "storageKey": "2026/10/42250b8d-ce4a-4d9d-955b-b269b093ec4c.png",
+      "checksum": "6b7fa434f92a8b80aab02d9bf1a12e49ffcae424e4013a1c4f68b67e3d2bbcd0",
+      "uploadedById": null,
+      "createdAt": "2026-10-24T14:29:16.406Z"
+    },
+    {
+      "id": "cmvmhwasp002lvl70w7lymw1n",
+      "originalName": "reference.png",
+      "storageName": "f665916b-4033-4d4f-b4e2-242127cd4483.png",
+      "mimeType": "image/png",
+      "size": 70,
+      "storageKey": "2026/10/f665916b-4033-4d4f-b4e2-242127cd4483.png",
+      "checksum": "6b7fa434f92a8b80aab02d9bf1a12e49ffcae424e4013a1c4f68b67e3d2bbcd0",
+      "uploadedById": null,
+      "createdAt": "2026-10-24T14:29:38.857Z"
+    },
+    {
+      "id": "cmvmhwr980019vl905ua0tkl9",
+      "originalName": "reference.png",
+      "storageName": "07811237-8212-4867-a90b-41d0ce13c621.png",
+      "mimeType": "image/png",
+      "size": 70,
+      "storageKey": "2026/10/07811237-8212-4867-a90b-41d0ce13c621.png",
+      "checksum": "6b7fa434f92a8b80aab02d9bf1a12e49ffcae424e4013a1c4f68b67e3d2bbcd0",
+      "uploadedById": null,
+      "createdAt": "2026-10-24T14:30:00.188Z"
+    },
+    {
+      "id": "cmvmi698d0015vlosb0sfc5g6",
+      "originalName": "ui-upload.png",
+      "storageName": "d14a1c57-336b-41bb-9654-5818ff5ccf84.png",
+      "mimeType": "image/png",
+      "size": 70,
+      "storageKey": "2026/10/d14a1c57-336b-41bb-9654-5818ff5ccf84.png",
+      "checksum": "6b7fa434f92a8b80aab02d9bf1a12e49ffcae424e4013a1c4f68b67e3d2bbcd0",
+      "uploadedById": null,
+      "createdAt": "2026-10-24T14:37:23.389Z"
+    }
+  ],
+  "taskFiles": [
+    {
+      "taskId": "cmvmhvthr0019vl70v04a8lq3",
+      "fileId": "cmvmhvth20017vl70ah5og2zg"
+    },
+    {
+      "taskId": "cmvmhwat7002nvl705hrjkzak",
+      "fileId": "cmvmhwasp002lvl70w7lymw1n"
+    },
+    {
+      "taskId": "cmvmhwr9s001bvl90niy5v1oy",
+      "fileId": "cmvmhwr980019vl905ua0tkl9"
+    },
+    {
+      "taskId": "cmvmi6gr60017vlos31iaw2um",
+      "fileId": "cmvmi698d0015vlosb0sfc5g6"
+    }
+  ],
+  "assets": [
+    {
+      "id": "cmvmhvt5p0013vl70q55bxa1b",
+      "taskId": "cmvmhvp2o000zvl70tzcovl52",
+      "name": "课堂请求帮助场景",
+      "sceneType": "小学课堂",
+      "description": "练习请求帮助",
+      "learnerId": "cmvmhvozb0005vl70jlkdylbq",
+      "trainingGoalId": "cmvmhvp12000nvl70wqmqdw8b",
+      "scriptId": "cmvmhvp1n000rvl708cwekxui",
+      "sourceType": "SCRIPT",
+      "tags": [
+        "小学课堂",
+        "训练脚本",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmhvp2o000zvl70tzcovl52:siwzzo",
+      "previewFileId": null,
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:15.998Z",
+      "updatedAt": "2026-10-24T14:29:15.998Z"
+    },
+    {
+      "id": "cmvmhvxi8001dvl70bgddhtyo",
+      "taskId": "cmvmhvthr0019vl70v04a8lq3",
+      "name": "图像参考场景",
+      "sceneType": "家庭客厅",
+      "description": "上传图片联调",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "sourceType": "IMAGE",
+      "tags": [
+        "家庭客厅",
+        "图像上传",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmhvthr0019vl70v04a8lq3:hxv365",
+      "previewFileId": "cmvmhvth20017vl70ah5og2zg",
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:21.633Z",
+      "updatedAt": "2026-10-24T14:29:21.633Z"
+    },
+    {
+      "id": "cmvmhwajx002hvl70vg0i80ua",
+      "taskId": "cmvmhw6et002dvl70v8aa9zyj",
+      "name": "课堂请求帮助场景",
+      "sceneType": "小学课堂",
+      "description": "练习请求帮助",
+      "learnerId": "cmvmhw6d0001jvl70q14llv6y",
+      "trainingGoalId": "cmvmhw6dx0021vl702hlu55e1",
+      "scriptId": "cmvmhw6e60025vl70d2lcj2qm",
+      "sourceType": "SCRIPT",
+      "tags": [
+        "小学课堂",
+        "训练脚本",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmhw6et002dvl70v8aa9zyj:4rofyy",
+      "previewFileId": null,
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:38.541Z",
+      "updatedAt": "2026-10-24T14:29:38.541Z"
+    },
+    {
+      "id": "cmvmhwk320001vl90h3dohia4",
+      "taskId": "cmvmhwat7002nvl705hrjkzak",
+      "name": "图像参考场景",
+      "sceneType": "家庭客厅",
+      "description": "上传图片联调",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "sourceType": "IMAGE",
+      "tags": [
+        "家庭客厅",
+        "图像上传",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmhwat7002nvl705hrjkzak:85tnt9",
+      "previewFileId": "cmvmhwasp002lvl70w7lymw1n",
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:50.894Z",
+      "updatedAt": "2026-10-24T14:29:50.894Z"
+    },
+    {
+      "id": "cmvmhwqwu0015vl909f9se5ma",
+      "taskId": "cmvmhwmv10011vl90i3q7s64u",
+      "name": "课堂请求帮助场景",
+      "sceneType": "小学课堂",
+      "description": "练习请求帮助",
+      "learnerId": "cmvmhwmq60007vl90dv52xv2b",
+      "trainingGoalId": "cmvmhwmsj000pvl90zccj8dg9",
+      "scriptId": "cmvmhwmtn000tvl90dnl8hr8n",
+      "sourceType": "SCRIPT",
+      "tags": [
+        "小学课堂",
+        "训练脚本",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmhwmv10011vl90i3q7s64u:z6find",
+      "previewFileId": null,
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:29:59.742Z",
+      "updatedAt": "2026-10-24T14:29:59.742Z"
+    },
+    {
+      "id": "cmvmhwv9i001fvl90j74z55n8",
+      "taskId": "cmvmhwr9s001bvl90niy5v1oy",
+      "name": "图像参考场景",
+      "sceneType": "家庭客厅",
+      "description": "上传图片联调",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "sourceType": "IMAGE",
+      "tags": [
+        "家庭客厅",
+        "图像上传",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmhwr9s001bvl90niy5v1oy:pqark6",
+      "previewFileId": "cmvmhwr980019vl905ua0tkl9",
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:30:05.382Z",
+      "updatedAt": "2026-10-24T14:30:05.382Z"
+    },
+    {
+      "id": "cmvmi5lps0011vlos3iw6f69t",
+      "taskId": "cmvmi5i14000xvlosgnimh2iv",
+      "name": "在课堂中主动请求帮助 · 小学课堂情境 · 3D 场景",
+      "sceneType": "小学课堂",
+      "description": "在课堂中主动请求帮助",
+      "learnerId": "cmvmi2og20003vlos1k7yikz6",
+      "trainingGoalId": "cmvmi4c2a000lvlosveqavuml",
+      "scriptId": "cmvmi4uus000pvlosjq4rh728",
+      "sourceType": "SCRIPT",
+      "tags": [
+        "小学课堂",
+        "训练脚本",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmi5i14000xvlosgnimh2iv:yd51m5",
+      "previewFileId": null,
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:36:52.912Z",
+      "updatedAt": "2026-10-24T14:36:52.912Z"
+    },
+    {
+      "id": "cmvmi6kif001bvlospiv86gvn",
+      "taskId": "cmvmi6gr60017vlos31iaw2um",
+      "name": "浏览器图像参考场景",
+      "sceneType": "安静休息区",
+      "description": "浏览器图像参考场景",
+      "learnerId": null,
+      "trainingGoalId": null,
+      "scriptId": null,
+      "sourceType": "IMAGE",
+      "tags": [
+        "安静休息区",
+        "图像上传",
+        "演示场景"
+      ],
+      "previewSeed": "demo:mock:cmvmi6gr60017vlos31iaw2um:263puy",
+      "previewFileId": "cmvmi698d0015vlosb0sfc5g6",
+      "previewUrl": null,
+      "sceneFileUrl": null,
+      "sceneUrl": null,
+      "isDemo": true,
+      "note": "演示 Provider 生成的场景资产，可在接入真实生成服务后替换。",
+      "archivedAt": null,
+      "createdById": null,
+      "createdAt": "2026-10-24T14:37:38.007Z",
+      "updatedAt": "2026-10-24T14:37:38.007Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "cmvmhvoze0007vl70lntb9rr4",
+      "type": "LEARNER",
+      "title": "学员档案已创建",
+      "detail": "学员01 · XS-2026-001",
+      "link": "/learners/cmvmhvozb0005vl70jlkdylbq",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.586Z"
+    },
+    {
+      "id": "cmvmhvozy000bvl70uzpv8e5h",
+      "type": "ASSESSMENT",
+      "title": "能力信息已保存",
+      "detail": "学员01 · 新增一次能力记录",
+      "link": "/learners/cmvmhvozb0005vl70jlkdylbq",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.606Z"
+    },
+    {
+      "id": "cmvmhvp0i000hvl70raokm72f",
+      "type": "PROFILE",
+      "title": "能力画像已生成（演示数据）",
+      "detail": "学员01 · 待确认",
+      "link": "/profiles/cmvmhvozb0005vl70jlkdylbq",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.627Z"
+    },
+    {
+      "id": "cmvmhvp0t000lvl702qt0kisp",
+      "type": "PROFILE",
+      "title": "能力画像已确认",
+      "detail": "学员01",
+      "link": "/profiles/cmvmhvozb0005vl70jlkdylbq",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.637Z"
+    },
+    {
+      "id": "cmvmhvp19000pvl70toczeshy",
+      "type": "GOAL",
+      "title": "训练目标已创建",
+      "detail": "学员01 · 在课堂中主动请求帮助",
+      "link": "/goals?learner=cmvmhvozb0005vl70jlkdylbq",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.653Z"
+    },
+    {
+      "id": "cmvmhvp1y000vvl70h9ljn9f4",
+      "type": "SCRIPT",
+      "title": "训练脚本已生成（演示数据）",
+      "detail": "学员01 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmhvp1n000rvl708cwekxui",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.678Z"
+    },
+    {
+      "id": "cmvmhvp2f000xvl70o9soynpa",
+      "type": "SCRIPT",
+      "title": "训练脚本已确认",
+      "detail": "学员01 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmhvp1n000rvl708cwekxui",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.696Z"
+    },
+    {
+      "id": "cmvmhvp2r0011vl70qc15xys5",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "课堂请求帮助场景",
+      "link": "/scenes/tasks/cmvmhvp2o000zvl70tzcovl52",
+      "actorId": null,
+      "at": "2026-10-24T14:29:10.708Z"
+    },
+    {
+      "id": "cmvmhvt5t0015vl70qka8zkn7",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "课堂请求帮助场景",
+      "link": "/scenes/tasks/cmvmhvp2o000zvl70tzcovl52",
+      "actorId": null,
+      "at": "2026-10-24T14:29:16.001Z"
+    },
+    {
+      "id": "cmvmhvthv001bvl70e3folgvu",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "图像参考场景",
+      "link": "/scenes/tasks/cmvmhvthr0019vl70v04a8lq3",
+      "actorId": null,
+      "at": "2026-10-24T14:29:16.435Z"
+    },
+    {
+      "id": "cmvmhvxia001fvl70fomar1qr",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "图像参考场景",
+      "link": "/scenes/tasks/cmvmhvthr0019vl70v04a8lq3",
+      "actorId": null,
+      "at": "2026-10-24T14:29:21.634Z"
+    },
+    {
+      "id": "cmvmhw6d1001lvl70kky31sp0",
+      "type": "LEARNER",
+      "title": "学员档案已创建",
+      "detail": "学员01 · XS-2026-002",
+      "link": "/learners/cmvmhw6d0001jvl70q14llv6y",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.110Z"
+    },
+    {
+      "id": "cmvmhw6d9001pvl70p14k0jqz",
+      "type": "ASSESSMENT",
+      "title": "能力信息已保存",
+      "detail": "学员01 · 新增一次能力记录",
+      "link": "/learners/cmvmhw6d0001jvl70q14llv6y",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.117Z"
+    },
+    {
+      "id": "cmvmhw6di001vvl703jw31ufu",
+      "type": "PROFILE",
+      "title": "能力画像已生成（演示数据）",
+      "detail": "学员01 · 待确认",
+      "link": "/profiles/cmvmhw6d0001jvl70q14llv6y",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.126Z"
+    },
+    {
+      "id": "cmvmhw6dr001zvl70pppswpvj",
+      "type": "PROFILE",
+      "title": "能力画像已确认",
+      "detail": "学员01",
+      "link": "/profiles/cmvmhw6d0001jvl70q14llv6y",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.135Z"
+    },
+    {
+      "id": "cmvmhw6dz0023vl70w4szmv6v",
+      "type": "GOAL",
+      "title": "训练目标已创建",
+      "detail": "学员01 · 在课堂中主动请求帮助",
+      "link": "/goals?learner=cmvmhw6d0001jvl70q14llv6y",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.143Z"
+    },
+    {
+      "id": "cmvmhw6e80029vl70p0zvsdm1",
+      "type": "SCRIPT",
+      "title": "训练脚本已生成（演示数据）",
+      "detail": "学员01 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmhw6e60025vl70d2lcj2qm",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.153Z"
+    },
+    {
+      "id": "cmvmhw6el002bvl70xmno9uxq",
+      "type": "SCRIPT",
+      "title": "训练脚本已确认",
+      "detail": "学员01 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmhw6e60025vl70d2lcj2qm",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.166Z"
+    },
+    {
+      "id": "cmvmhw6eu002fvl7045hoj6mm",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "课堂请求帮助场景",
+      "link": "/scenes/tasks/cmvmhw6et002dvl70v8aa9zyj",
+      "actorId": null,
+      "at": "2026-10-24T14:29:33.175Z"
+    },
+    {
+      "id": "cmvmhwajy002jvl700hi3vz9k",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "课堂请求帮助场景",
+      "link": "/scenes/tasks/cmvmhw6et002dvl70v8aa9zyj",
+      "actorId": null,
+      "at": "2026-10-24T14:29:38.543Z"
+    },
+    {
+      "id": "cmvmhwat9002pvl709jvql1xc",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "图像参考场景",
+      "link": "/scenes/tasks/cmvmhwat7002nvl705hrjkzak",
+      "actorId": null,
+      "at": "2026-10-24T14:29:38.878Z"
+    },
+    {
+      "id": "cmvmhwk3a0003vl900v2vwzlh",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "图像参考场景",
+      "link": "/scenes/tasks/cmvmhwat7002nvl705hrjkzak",
+      "actorId": null,
+      "at": "2026-10-24T14:29:50.903Z"
+    },
+    {
+      "id": "cmvmhwmq80009vl90x6250bvp",
+      "type": "LEARNER",
+      "title": "学员档案已创建",
+      "detail": "学员01 · XS-2026-003",
+      "link": "/learners/cmvmhwmq60007vl90dv52xv2b",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.320Z"
+    },
+    {
+      "id": "cmvmhwmqk000dvl902dx5wqbz",
+      "type": "ASSESSMENT",
+      "title": "能力信息已保存",
+      "detail": "学员01 · 新增一次能力记录",
+      "link": "/learners/cmvmhwmq60007vl90dv52xv2b",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.333Z"
+    },
+    {
+      "id": "cmvmhwmrm000jvl90cs7bip1o",
+      "type": "PROFILE",
+      "title": "能力画像已生成（演示数据）",
+      "detail": "学员01 · 待确认",
+      "link": "/profiles/cmvmhwmq60007vl90dv52xv2b",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.370Z"
+    },
+    {
+      "id": "cmvmhwmsa000nvl900iryuqmv",
+      "type": "PROFILE",
+      "title": "能力画像已确认",
+      "detail": "学员01",
+      "link": "/profiles/cmvmhwmq60007vl90dv52xv2b",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.394Z"
+    },
+    {
+      "id": "cmvmhwmso000rvl908rbodl1o",
+      "type": "GOAL",
+      "title": "训练目标已创建",
+      "detail": "学员01 · 在课堂中主动请求帮助",
+      "link": "/goals?learner=cmvmhwmq60007vl90dv52xv2b",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.409Z"
+    },
+    {
+      "id": "cmvmhwmtw000xvl9000s2vnfs",
+      "type": "SCRIPT",
+      "title": "训练脚本已生成（演示数据）",
+      "detail": "学员01 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmhwmtn000tvl90dnl8hr8n",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.453Z"
+    },
+    {
+      "id": "cmvmhwmus000zvl903dpdiwbq",
+      "type": "SCRIPT",
+      "title": "训练脚本已确认",
+      "detail": "学员01 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmhwmtn000tvl90dnl8hr8n",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.484Z"
+    },
+    {
+      "id": "cmvmhwmv30013vl905bnrtu39",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "课堂请求帮助场景",
+      "link": "/scenes/tasks/cmvmhwmv10011vl90i3q7s64u",
+      "actorId": null,
+      "at": "2026-10-24T14:29:54.495Z"
+    },
+    {
+      "id": "cmvmhwqww0017vl90c9thlvjh",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "课堂请求帮助场景",
+      "link": "/scenes/tasks/cmvmhwmv10011vl90i3q7s64u",
+      "actorId": null,
+      "at": "2026-10-24T14:29:59.744Z"
+    },
+    {
+      "id": "cmvmhwr9v001dvl907cgp0wwh",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "图像参考场景",
+      "link": "/scenes/tasks/cmvmhwr9s001bvl90niy5v1oy",
+      "actorId": null,
+      "at": "2026-10-24T14:30:00.211Z"
+    },
+    {
+      "id": "cmvmhwv9k001hvl908q9bt9yo",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "图像参考场景",
+      "link": "/scenes/tasks/cmvmhwr9s001bvl90niy5v1oy",
+      "actorId": null,
+      "at": "2026-10-24T14:30:05.385Z"
+    },
+    {
+      "id": "cmvmi2og40005vlosx2i3jdji",
+      "type": "LEARNER",
+      "title": "学员档案已创建",
+      "detail": "学员04 · XS-2026-004",
+      "link": "/learners/cmvmi2og20003vlos1k7yikz6",
+      "actorId": null,
+      "at": "2026-10-24T14:34:36.485Z"
+    },
+    {
+      "id": "cmvmi3lk10009vlosz6f953aw",
+      "type": "ASSESSMENT",
+      "title": "能力信息已保存",
+      "detail": "学员04 · 新增一次能力记录",
+      "link": "/learners/cmvmi2og20003vlos1k7yikz6",
+      "actorId": null,
+      "at": "2026-10-24T14:35:19.394Z"
+    },
+    {
+      "id": "cmvmi3otn000fvlos3bnrdab7",
+      "type": "PROFILE",
+      "title": "能力画像已生成（演示数据）",
+      "detail": "学员04 · 待确认",
+      "link": "/profiles/cmvmi2og20003vlos1k7yikz6",
+      "actorId": null,
+      "at": "2026-10-24T14:35:23.627Z"
+    },
+    {
+      "id": "cmvmi3zh2000jvlosnhavd04k",
+      "type": "PROFILE",
+      "title": "能力画像已确认",
+      "detail": "学员04",
+      "link": "/profiles/cmvmi2og20003vlos1k7yikz6",
+      "actorId": null,
+      "at": "2026-10-24T14:35:37.431Z"
+    },
+    {
+      "id": "cmvmi4c2f000nvlosh84ujgwp",
+      "type": "GOAL",
+      "title": "训练目标已创建",
+      "detail": "学员04 · 在课堂中主动请求帮助",
+      "link": "/goals?learner=cmvmi2og20003vlos1k7yikz6",
+      "actorId": null,
+      "at": "2026-10-24T14:35:53.751Z"
+    },
+    {
+      "id": "cmvmi4uv0000tvlos5wbxmorm",
+      "type": "SCRIPT",
+      "title": "训练脚本已生成（演示数据）",
+      "detail": "学员04 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmi4uus000pvlosjq4rh728",
+      "actorId": null,
+      "at": "2026-10-24T14:36:18.108Z"
+    },
+    {
+      "id": "cmvmi55m2000vvlosqsn7ppd2",
+      "type": "SCRIPT",
+      "title": "训练脚本已确认",
+      "detail": "学员04 · 在课堂中主动请求帮助 · 小学课堂情境",
+      "link": "/scripts/cmvmi4uus000pvlosjq4rh728",
+      "actorId": null,
+      "at": "2026-10-24T14:36:32.042Z"
+    },
+    {
+      "id": "cmvmi5i17000zvloseop468g7",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "在课堂中主动请求帮助 · 小学课堂情境 · 3D 场景",
+      "link": "/scenes/tasks/cmvmi5i14000xvlosgnimh2iv",
+      "actorId": null,
+      "at": "2026-10-24T14:36:48.140Z"
+    },
+    {
+      "id": "cmvmi5lpu0013vlost77aybal",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "在课堂中主动请求帮助 · 小学课堂情境 · 3D 场景",
+      "link": "/scenes/tasks/cmvmi5i14000xvlosgnimh2iv",
+      "actorId": null,
+      "at": "2026-10-24T14:36:52.914Z"
+    },
+    {
+      "id": "cmvmi6grb0019vlos3bm0trwj",
+      "type": "TASK",
+      "title": "场景任务已提交（演示 Provider）",
+      "detail": "浏览器图像参考场景",
+      "link": "/scenes/tasks/cmvmi6gr60017vlos31iaw2um",
+      "actorId": null,
+      "at": "2026-10-24T14:37:33.143Z"
+    },
+    {
+      "id": "cmvmi6kih001dvlos6xr3rmnc",
+      "type": "TASK",
+      "title": "场景任务生成成功（演示数据）",
+      "detail": "浏览器图像参考场景",
+      "link": "/scenes/tasks/cmvmi6gr60017vlos31iaw2um",
+      "actorId": null,
+      "at": "2026-10-24T14:37:38.010Z"
+    }
+  ]
+}
